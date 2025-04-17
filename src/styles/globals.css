@@ -1,0 +1,109 @@
+/* @import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+*/
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+   --kcDarkTransparancy: #00000042; 
+   --kcMainBackgroundColor: #eceff1; /* Colors.blueGrey.shade50 */
+   --kcBotswanaBlue: #6ec6ec; /* rgba(110, 198, 236, 1) */
+   --kcBotswanaBlueLight: #a5e0fa; /* rgba(165, 224, 250, 1) */
+   --kcAlternativeBlue: #039be5;
+   --kcBotswanaGold: #e1c921;
+   --kcBotswanaRed: #ed1d24;
+   --kcBotswanaGreen: #26a146;
+   --kcBotswanaGreenSuccess: #0cdc44; /* rgba(12, 220, 68, 1) */
+   --kcBotswanaSienna: #88360b;
+   --kcBotswanaBrown: #3f1e17;
+   --kcBotswanaBlack: #000000;
+   --kcOverLayColor: rgba(0, 0, 0, 0.87); /* Colors.black87 */
+   --kcComplimentaryGrey: #4b5563;
+   --kcMediumGreyColor: #6b7280;
+   --kcDarkGreyColor: #424242;
+   --kcLightGreyColor: #9ca3af;
+   --kcVeryLightGreyColor: #d1d5db;
+   --kcWhiteColor: #ffffff;
+   --primaryTextColorLight: #101213;
+   --secondaryTextColorLight: #57636c;
+   --primaryTextColorLightDark: #ffffff;
+   --secondaryTextColorLightDark: #95a1ac;
+   --kcTransparent: transparent;
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+*/
+body {
+  background: var(--kcWhiteColor);
+  font-family: Arial;
+  height: 100vh;
+  padding: 0;
+  margin:0;
+} 
+
+.coat-of-arms-container {
+  background-image: url('../assets/coat_of_arms.png');
+  background-color: var(--kcWhiteColor);
+  border-radius: 0 0 25px 25px;
+  width: 350px; 
+  height: 200px; 
+  background-size: contain; /* This will scale the image to fit */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.govlogo {
+  background-image: url('../assets/1gov.png');
+  width: 55px; 
+  height: 55px; 
+  background-size: contain; /* This will scale the image to fit */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.playstore-button-image {
+  background-image: url('../assets/playstore_badge.png');
+  width: 130px;
+  height: 40px; 
+  background-size: contain; /* This will scale the image to fit */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 20px;
+}
+
+.contact-container {
+  background-color: var(--kcDarkTransparancy);
+  width: 300px; 
+  height: 65px;
+  padding: 15px; 
+  margin-bottom: 15px;
+  display: flex;
+  gap: 15px;
+}
+
+.white-text{
+  color: var(--kcWhiteColor)
+}
+
+.header-max{
+  font-size: 3.5rem;
+  font-weight: 500;
+}
+
+.vertical-divider{
+  height:70%;
+  margin: 10px;
+}
+
+.smaller-caption{
+  font-size: 10px !important;
+}
