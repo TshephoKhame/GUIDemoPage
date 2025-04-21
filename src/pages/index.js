@@ -8,6 +8,7 @@ export default function Home() {
   const loginDialogRef = useRef(null);
   const registrationDialogRef = useRef(null);
   const router = useRouter();
+  
   useEffect(() => {
     const loginDialog = loginDialogRef.current;
     const registrationDialog = registrationDialogRef.current;

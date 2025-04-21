@@ -6,7 +6,7 @@ export default function DashboardHome() {
 
   return (
     <MainLayout showLoginToaster={true} toasterHeader="Success!" toasterText="You logged in!!" toasterVarient="success" toasterAnimation="zoomInRight">
-        <div style={{ height: "100vh", overflowY: "auto", padding: "10px 0px" }}>
+        <div style={{ padding: "10px 0px" }}>
           <gov-row style={{}}>
             <gov-box size={10}>
               <gov-row style={{}}>
