@@ -9,7 +9,7 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
           style={{
             position: "fixed",
             top: "10px",
-            right: "10px",
+            right: "0px",
             zIndex: 1000000,
             width: "400px",
           }}
@@ -53,7 +53,7 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
             {"icon": "heart", "size": "24px", "variant": "danger", "action": "settingsFunction"}
           ]'
       >
-        <div style={{ padding: "10px 0px" }}>
+        <div style={{}}>
           {children}
         </div>
       </gov-layout>

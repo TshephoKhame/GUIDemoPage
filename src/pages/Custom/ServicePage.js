@@ -95,20 +95,22 @@ export default function ServiceCatagories() {
             </gov-row>
         </gov-box>
 
-        <div style={{
-          fontSize: '18px',
-          marginBottom: '10px',
-          padding: '0px 20px',
-          alignItems: 'center',
-        }}>
-          <gov-icon name="dotsHorizontalOutline" size="md" variant="primary"></gov-icon> <span className='h6'> Browse Service Catagories</span>
+        <div 
+          style={{
+            marginBottom: '10px',
+            padding: '0px 0px',
+            alignItems: 'center',
+          }}
+          className='mb-20' >
+          <gov-icon name="dotsHorizontalOutline" size="md" variant="primary"></gov-icon>
+          <span className='h5 fw-medium'> Browse Service Catagories</span>
         </div>
         <div style={{
           fontSize: '18px',
           marginBottom: '10px',
           padding: '0px 20px',
         }} className='success-text'>
-          228 services available
+          <span className='h5 fw-bold'>228</span> <span className='h6'>services available</span>
         </div>
 
              
@@ -140,10 +142,10 @@ export default function ServiceCatagories() {
             </gov-row>
           ))} */}
           {serviceCategories.map((service, index) => (
-            <gov-card show-button='false'  key={index}>
+            <gov-card show-button='false'  className='border bw-1 border-radius-lg shadow d-flex align-center' key={index}>
             <gov-row 
              
-              className='border bw-1 border-radius-lg shadow d-flex align-center'
+             
              
             //   onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
             //   onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
