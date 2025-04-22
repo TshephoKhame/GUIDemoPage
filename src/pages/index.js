@@ -56,7 +56,7 @@ export default function Home() {
         classes=""
       >
         {/* Top area*/}
-        <div style={{ height: "60vh" }}>
+        <div style={{ height: "65vh" }}>
           {/*coat of arms row */}
           <gov-row
             align="start"
@@ -83,7 +83,7 @@ export default function Home() {
             justify="center"
             gap="10px"
             reverse="false"
-            classes=""
+            classes="header-row" //added class to apply margin-bottom
           >
             <p className="header-max white-text">Botswana E-Services Portal</p>
           </gov-row>
@@ -104,7 +104,7 @@ export default function Home() {
           gap="10px"
           reverse="false"
           classes=""
-          style={{ height: "40vh", padding: "40px" }}
+          style={{ height: "35vh", padding: "40px" }}
         >
           {/* left side of footer */}
           <gov-box
@@ -203,7 +203,7 @@ export default function Home() {
 
           {/* Login and Registration Buttons */}
           <gov-box
-            size="3"
+            size="6"
             align="end"
             justify="end"
             gap="15px"
@@ -215,14 +215,20 @@ export default function Home() {
               type-variant="button"
               size="lg"
               variant="white"
+              border-radius="5px"
               label="Login"
+              
+             
             ></gov-button>
             <gov-button
               clicked={handleRegistrationClick}
               type-variant="button"
-              size="lg"
-              variant="white"
+              size="xxl"
+              border-radius="5px"
+              variant="black"
               label="Register"
+            
+             
             ></gov-button>
           </gov-box>
         </gov-row>
@@ -286,7 +292,7 @@ export default function Home() {
                   >
                     <gov-button
                       label="Login"
-                      size="lg"
+                      size="lg "
                       variant="success"
                       clicked={Login}
                     ></gov-button>

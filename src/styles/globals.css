@@ -53,11 +53,13 @@ body {
 .coat-of-arms-container {
   background-image: url('../assets/coat_of_arms.png');
   background-color: var(--kcWhiteColor);
-  border-radius: 0 0 25px 25px;
-  width: 350px; 
-  height: 200px; 
+  border-radius: 25px 25px 25px 25px;
+  width: 300px; 
+  height: 250px; 
   background-size: contain; /* This will scale the image to fit */
   background-repeat: no-repeat;
+  margin-top: 35px; /* pushed the coat of arms lower  */
+  margin-bottom: 30px; /* increased spacing between the arms and title */
   background-position: center;
 }
 
@@ -99,6 +101,10 @@ body {
   font-weight: 500;
 }
 
+.header-row{
+  margin-bottom: 20px; /* adds spacing the below the titile row */
+} 
+
 .vertical-divider{
   height:70%;
   margin: 10px;
@@ -107,3 +113,6 @@ body {
 .smaller-caption{
   font-size: 10px !important;
 }
+
+
+
