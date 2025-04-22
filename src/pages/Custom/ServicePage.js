@@ -99,6 +99,14 @@ export default function ServiceCatagories() {
           fontSize: '18px',
           marginBottom: '10px',
           padding: '0px 20px',
+          alignItems: 'center',
+        }}>
+          <gov-icon name="dotsHorizontalOutline" size="md" variant="primary"></gov-icon> <span className='h6'> Browse Service Catagories</span>
+        </div>
+        <div style={{
+          fontSize: '18px',
+          marginBottom: '10px',
+          padding: '0px 20px',
         }} className='success-text'>
           228 services available
         </div>

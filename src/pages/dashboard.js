@@ -12,12 +12,10 @@ export default function DashboardHome() {
                 <ServiceCatagories />
             </gov-box>
             <gov-box size="12" lg="3" md="12">
-                  <gov-calender></gov-calender>
+                <gov-calender></gov-calender>
             </gov-box>
           </gov-row>
-          
-        </div>
-        
+        </div> 
       </MainLayout>
     
   );
