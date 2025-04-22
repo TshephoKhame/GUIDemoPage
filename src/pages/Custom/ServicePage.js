@@ -132,9 +132,9 @@ export default function ServiceCatagories() {
             </gov-row>
           ))} */}
           {serviceCategories.map((service, index) => (
-            <gov-card showButton={false}>
+            <gov-card show-button='false'  key={index}>
             <gov-row 
-              key={index}
+             
               className='border bw-1 border-radius-lg shadow d-flex align-center'
              
             //   onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}

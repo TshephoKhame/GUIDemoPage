@@ -24,6 +24,7 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
         </div>
       )}
       <gov-layout
+        logo="../../assets/1gov.png"
         top-Bar-Items='[
         
         ]'
@@ -52,7 +53,7 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
             {"icon": "heart", "size": "24px", "variant": "danger", "action": "settingsFunction"}
           ]'
       >
-        <div style={{ height: "100vh", overflowY: "auto", padding: "10px 0px" }}>
+        <div style={{ padding: "10px 0px" }}>
           {children}
         </div>
       </gov-layout>

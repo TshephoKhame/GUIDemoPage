@@ -8,7 +8,7 @@ export default function Home() {
   const loginDialogRef = useRef(null);
   const registrationDialogRef = useRef(null);
   const router = useRouter();
-  
+
   useEffect(() => {
     const loginDialog = loginDialogRef.current;
     const registrationDialog = registrationDialogRef.current;
@@ -211,10 +211,11 @@ export default function Home() {
             is-flex-box="true"
             classes=""
           >
+            
             <gov-button
               clicked={handleLoginClick}
               type-variant="button"
-              size="lg"
+              size="xxl"
               variant="white"
               label="Login"
             ></gov-button>

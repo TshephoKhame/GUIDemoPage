@@ -15,13 +15,7 @@ export default function DashboardHome() {
                   <gov-calender></gov-calender>
             </gov-box>
           </gov-row>
-          <gov-box size="12" lg="4" md="12">
-                  <gov-calender></gov-calender>
-            </gov-box>
-            <div style={{width:'40vw',}}>
-            <gov-calender></gov-calender>
-
-            </div>
+          
         </div>
         
       </MainLayout>
