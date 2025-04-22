@@ -10,7 +10,7 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
             position: "fixed",
             top: "10px",
             right: "10px",
-            zIndex: 1000,
+            zIndex: 1000000,
             width: "400px",
           }}
         >
@@ -25,9 +25,7 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
       )}
       <gov-layout
         top-Bar-Items='[
-         {"label": "", "href": "/dashboard", "icon": "bell"},
-         {"label": "", "href": "/dashboard" , "icon": "infoCircle"},
-         {"label": "", "href": "/dashboard", "icon": "userCircle"}
+        
         ]'
         sidebar-Items='[
         { "label": "Home", "link": "/dashboard", "icon": "homeOutline" },
@@ -48,6 +46,11 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
         avatar-Img-Url="https://picsum.photos/400/300"
         avatar-Initials="AP"
         menu-Type="site"
+        icon-Buttons='[
+            {"icon": "search", "size": "24px", "variant": "primary", "action": "searchFunction"},
+            {"icon": "bell", "size": "24px", "variant": "secondary", "action": "bellFunction"},
+            {"icon": "heart", "size": "24px", "variant": "danger", "action": "settingsFunction"}
+          ]'
       >
         <div style={{ height: "100vh", overflowY: "auto", padding: "10px 0px" }}>
           {children}

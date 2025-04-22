@@ -97,7 +97,8 @@ export default function ServiceCatagories() {
 
         <div style={{
           fontSize: '18px',
-          marginBottom: '10px'
+          marginBottom: '10px',
+          padding: '0px 20px',
         }} className='success-text'>
           228 services available
         </div>
@@ -109,7 +110,7 @@ export default function ServiceCatagories() {
           gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
           gap: '20px'
         }}>
-            {serviceCategories.map((service, index) => (
+            {/* {serviceCategories.map((service, index) => (
             <gov-row 
               key={index}
             >
@@ -129,23 +130,20 @@ export default function ServiceCatagories() {
                image-clip="fill" >
             </gov-card>
             </gov-row>
-          ))}
-          {/* {serviceCategories.map((service, index) => (
+          ))} */}
+          {serviceCategories.map((service, index) => (
+            <gov-card showButton={false}>
             <gov-row 
               key={index}
-              className='border bw-1 border-radius-lg p-20 shadow d-flex align-center'
-              style={{
-                backgroundColor: 'white',
-                textAlign: 'center',
-                transition: 'transform 0.3s ease',
-                cursor: 'pointer'
-              }}
+              className='border bw-1 border-radius-lg shadow d-flex align-center'
+             
             //   onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
             //   onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
             >
               <img 
                 src={service.icon} 
                 alt={service.title}
+                className='m-10 border-radius'
                 style={{
                   width: '100px',
                   height: '100px',
@@ -153,7 +151,7 @@ export default function ServiceCatagories() {
                   borderRadius: '8px',
                 }}
               />
-              <gov-box is-flex-box="true"  align="center" justify="space-between" className="" style={{flexDirection:'column',height:'100%'}}>
+              <gov-box is-flex-box="true"  align="center" justify="space-between" className="" gap='20px' style={{flexDirection:'column',height:'100%',marginLeft:'10px',padding:'10px 0px'}}>
               <h3 style={{
                 color: '#2c3e50',
                 fontSize: '16px',
@@ -166,7 +164,7 @@ export default function ServiceCatagories() {
               <div
                className='primary-bg'
               style={{
-                color: '#2c3e50',
+                color: '#fff',
                 padding: '5px 10px',
                 borderRadius: '20px',
                 fontSize: '14px'
@@ -175,7 +173,8 @@ export default function ServiceCatagories() {
               </div>
               </gov-box>
             </gov-row>
-          ))} */}
+            </gov-card>
+          ))}
         </div>
       </div>
     </gov-box>
