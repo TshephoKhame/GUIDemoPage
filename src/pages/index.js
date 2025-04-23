@@ -104,6 +104,7 @@ export default function Home() {
           gap="10px"
           reverse="false"
           classes=""
+    
           style={{ height: "35vh", padding: "40px" }}
         >
           {/* left side of footer */}
@@ -116,7 +117,7 @@ export default function Home() {
             style={{ flexDirection: "column" }}
           >
             {/* Renders play button */}
-            <div className="playstore-button-image" style={{}}></div>
+            {/* <div className="playstore-button-image" style={{}}></div> */}
 
             {/* Contact buttons */}
             <div className="contact-container border-radius-lg" style={{}}>
@@ -132,7 +133,7 @@ export default function Home() {
                     <gov-tooltip
                       text="e-support@gov.bw"
                       position="bottom"
-                      color="light"
+                      color="#171717"
                     >
                       <gov-icon
                         name="envelope"
@@ -143,7 +144,7 @@ export default function Home() {
                     <gov-tooltip
                       text="+26773996013"
                       position="bottom"
-                      color="light"
+                      color="#171717"
                     >
                       <gov-icon
                         name="phone"
@@ -160,7 +161,7 @@ export default function Home() {
                     <gov-tooltip
                       text="https://www.facebook.com/BotswanaGovernment/"
                       position="bottom"
-                      color="light"
+                      color="#171717"
                     >
                       <gov-icon
                         name="facebook"
@@ -172,14 +173,14 @@ export default function Home() {
                     <gov-tooltip
                       text="https://x.com/BWGovernment"
                       position="bottom"
-                      color="light"
+                      color="#171717"
                     >
                       <gov-icon name="X" size="md" variant="white"></gov-icon>
                     </gov-tooltip>
                     <gov-tooltip
                       text="https://www.instagram.com/bwgov/"
                       position="bottom"
-                      color="light"
+                      color="#171717"
                     >
                       <gov-icon
                         name="instagram"
@@ -217,7 +218,9 @@ export default function Home() {
               variant="white"
               border-radius="5px"
               label="Login"
+
               
+
              
             ></gov-button>
             <gov-button
@@ -225,8 +228,9 @@ export default function Home() {
              type-variant="button"
               size="lg"
               border-radius="5px"
-              variant="black"
+             
               label="Register"
+            
             
              
 
@@ -403,6 +407,7 @@ export default function Home() {
                       variant="blue"
                       
                       clicked={Login}
+                      
                     ></gov-button>
                   </gov-row>
                 </div>
@@ -435,7 +440,7 @@ export default function Home() {
                   enc-type="application/x-www-form-urlencoded"
                   submit-btn-text="Register"
                   hide-cancel-btn="true"
-                  variant="success"
+                  variant="blue"
                 >
                   <gov-input
                     label="National ID No."
@@ -565,7 +570,7 @@ export default function Home() {
                     type="tel"
                     placeholder="Enter your phone number"
                     is-valid="true"
-                    
+
                     is-touched="false"
                     validation-pattern="^267\d{8}$"
                     required="true"
