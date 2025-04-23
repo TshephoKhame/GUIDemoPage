@@ -24,7 +24,7 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
         </div>
       )}
       <gov-layout
-        layoutlogo="./assets/1gov.png"
+        layoutlogo="../../assets/1gov.png"
         top-Bar-Items='[
         
         ]'

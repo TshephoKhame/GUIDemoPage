@@ -1,242 +1,127 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import MainLayout from "./Custom/MainLayout";
 
 export default function Components() {
-  const [showToaster, setShowToaster] = useState(true);
-  const [sliderValue, setSliderValue] = useState(50);
-  const [switchState, setSwitchState] = useState(false);
+  const [sliderValue, setSliderValue] = useState(20);
   const [selectedMetric, setSelectedMetric] = useState("revenue");
 
-  // Sample data
-  const performanceData = [
-    { name: "Jan", revenue: 4000, users: 2400, engagement: 2400 },
-    { name: "Feb", revenue: 3000, users: 1398, engagement: 2210 },
-    { name: "Mar", revenue: 2000, users: 9800, engagement: 2290 },
-    { name: "Apr", revenue: 2780, users: 3908, engagement: 2000 },
-    { name: "May", revenue: 1890, users: 4800, engagement: 2181 },
-  ];
-  const bubbleChartData = {
-    datasets: [
-      {
-        label: "Bubble Dataset",
-        backgroundColor: [
-          "rgba(54, 162, 235, 0.5)",
-          "rgba(255, 99, 132, 0.5)",
-          "rgba(75, 192, 192, 0.5)",
-          "rgba(153, 102, 255, 0.5)",
-          "rgba(255, 99, 132, 0.5)",
-        ],
-        borderColor: [
-          "rgb(54, 162, 235)",
-          "rgb(255, 99, 132)",
-          "rgb(75, 192, 192)",
-          "rgb(153, 102, 255)",
-          "rgb(255, 99, 132)",
-        ],
-        data: [
-          { x: 1, y: 15000, r: 40 },
-          { x: 2, y: 20000, r: 15 },
-          { x: 3, y: 18000, r: 50 },
-          { x: 4, y: 22000, r: 18 },
-          { x: 2, y: 10000, r: 60 },
-          { x: 0.5, y: 10000, r: 10 },
-          { x: 1, y: 5000, r: 15 },
-        ],
-      },
-    ],
-  };
-
-  // Polar Area Chart Data
-  const polarAreaChartData = {
-    labels: ["Q1", "Q2", "Q3", "Q4"],
-    datasets: [
-      {
-        label: "Revenue",
-        backgroundColor: [
-          "rgba(54, 162, 235, 0.5)",
-          "rgba(255, 99, 132, 0.5)",
-          "rgba(75, 192, 192, 0.5)",
-          "rgba(153, 102, 255, 0.5)",
-        ],
-        borderColor: [
-          "rgb(54, 162, 235)",
-          "rgb(255, 99, 132)",
-          "rgb(75, 192, 192)",
-          "rgb(153, 102, 255)",
-        ],
-        borderWidth: 1,
-        data: [15000, 20000, 18000, 22000],
-      },
-    ],
-  };
-
-  // Bubble Chart Options
-  const bubbleChartOptions = {
-    responsive: true,
-    plugins: {
-      legend: {
-        display: true,
-        position: "top",
-      },
-    },
-    scales: {
-      x: {
-        type: "linear",
-        position: "bottom",
-        beginAtZero: true,
-      },
-      y: {
-        type: "linear",
-        beginAtZero: true,
-      },
-    },
-  };
-
-  // Polar Area Chart Options
-  const polarAreaChartOptions = {
-    responsive: true,
-    plugins: {
-      legend: {
-        display: true,
-        position: "top",
-      },
-    },
-  };
-  useEffect(() => {}, []);
-
   return (
-      <MainLayout showLoginToaster={true}toasterHeader="Statistics!" toasterText="Lets count stuff!" toasterVarient="danger" toasterAnimation="backInRight">
-        <gov-row style={{ height: "10vh", paddingTop: "15px" }}>
-          <gov-breadcrumb></gov-breadcrumb>
-        </gov-row>
-        <div style={{padding: "10px" }}>
-          <div className="bg-gray-100 min-h-screen p-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Performance Overview */}
-              <div className="md:col-span-2 bg-white rounded-lg shadow-md p-6">
-                <gov-box is-flex-box="false" className="spaceitems-center mb-4">
-                  <h2 className="text-xl font-semibold">Performance Metrics</h2>
-                  <gov-row gap="15px" className="mb-10">
-                   
-                  </gov-row>
-                </gov-box>
+    <MainLayout
+      showLoginToaster={true}
+      toasterHeader="Dashboard Overview"
+      toasterText="Explore your key performance indicators"
+      toasterVarient="info"
+      toasterAnimation="fadeIn"
+    >
+      <div className="p-6 bg-gray-50 min-h-screen space-y-10">
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <gov-breadcrumb animation="fadeIn" animationDelay="2s" animationSpeed="slower"></gov-breadcrumb>
+            <h1 className="text-3xl font-bold text-gray-800">Statistics Dashboard</h1>
+          </div>
+          <gov-date-time-picker></gov-date-time-picker>
+        </div>
 
-                <gov-row
-                  align="end"
-                  justify="start"
-                  gap="10px"
-                  reverse="false"
-                  classes="mb-4"
-                >
-                  {["revenue", "users", "engagement"].map((metric) => (
-                    <gov-chip
-                      onClick={() => setSelectedMetric(metric)}
-                      id={metric}
-                      label={metric}
-                      selected="false"
-                      disabled="false"
-                    ></gov-chip>
-                  ))}
-                </gov-row>
+        {/* Introductory Context */}
+        <div className="text-gray-600 max-w-3xl">
+          <p className="text-base">
+            Welcome to your data insights hub. Use the tools and charts below to analyze user engagement,
+            revenue trends, and operational metrics. Adjust parameters to explore different dimensions of your data.
+          </p>
+        </div>
 
-                <div className="bg-gray-100 min-h-screen p-6 " >
-                  <gov-row className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Bubble Chart */}
-                    <div className="bg-white rounded-lg shadow-md p-6" style={{width:'45%'}}>
-                      <h2 className="text-xl font-semibold mb-4">
-                        Bubble Chart Analysis
-                      </h2>
-                      <div className="h-96">
-                      <gov-chart type="bubble"
-data='{"datasets":[{"label":"Bubble Dataset","backgroundColor":["rgba(54, 162, 235, 0.5)","rgba(255, 99, 132, 0.5)","rgba(75, 192, 192, 0.5)","rgba(153, 102, 255, 0.5)","rgba(255, 99, 132, 0.5)"],"borderColor":["rgb(54, 162, 235)","rgb(255, 99, 132)","rgb(75, 192, 192)","rgb(153, 102, 255)","rgb(255, 99, 132)"],"data":[{"x":1,"y":15000,"r":40},{"x":2,"y":20000,"r":15},{"x":3,"y":18000,"r":50},{"x":4,"y":22000,"r":18},{"x":2,"y":10000,"r":60},{"x":0.5,"y":10000,"r":10},{"x":1,"y":5000,"r":15}]}]}'
-options='{"responsive":true,"plugins":{"legend":{"display":true,"position":"top"}},"scales":{"x":{"type":"linear","position":"bottom","beginAtZero":true},"y":{"type":"linear","beginAtZero":true}}}'
->
-</gov-chart>
-                      </div>
-                    </div>
+        {/* KPI Switch & Preferences */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-2xl p-6 shadow space-y-4">
+            <h2 className="text-lg font-semibold text-gray-700">User Preferences</h2>
+            <p className="text-sm text-gray-500">Select interface options and toggle themes to personalize your dashboard experience.</p>
+            <gov-radiobutton heading="Choose Your Current Project" subtitle="Choose one of the following options" options='[
+      {"value": "1", "label": "Geo Location"},
+      {"value": "2", "label": "Time Stamps"},
+      {"value": "3", "label": "Simulations"}
+    ]'>
+    </gov-radiobutton>
+    <h2 className="text-lg font-semibold text-gray-700">Data Rendering</h2>
+            <gov-switcher
+              is-on="true"
+              show-label="true"
+              has-icons="false"
+              size="small"
+            >
+              <span slot="on-icon">🌞</span>
+              <span slot="off-icon">🌚</span>
+            </gov-switcher>
+          </div>
 
-                    {/* Polar Area Chart */}
-                    <div className="bg-white rounded-lg shadow-md p-6" style={{width:'45%'}}>
-                      <h2 className="text-xl font-semibold mb-4">
-                        Quarterly Revenue Distribution
-                      </h2>
-                      <div className="h-96">
-                        <gov-chart
-                          data={polarAreaChartData}
-                          options={polarAreaChartOptions}
-                        ></gov-chart>
-                      </div>
-                    </div>
-                  </gov-row >
-                </div>
-              
-              </div>
+          {/* Slider and Progress */}
+          <div className="bg-white rounded-2xl p-6 shadow space-y-4">
+            <h2 className="text-lg font-semibold text-gray-700">Project Sensitivity</h2>
+            <p className="text-sm text-gray-500">Use the slider to simulate or reflect the current sensitivity level for your active initiatives.</p>
+            <gov-slider
+              onChange={(e) => setSliderValue(Number(e.target.value))}
+              min="0"
+              max="100"
+              step="1"
+              label="Sensitivity"
+              value={sliderValue}
+            ></gov-slider>
+            <gov-progress-bar
+              progress={sliderValue}
+              label="Completion Rate"
+              variant="primary"
+              type="linear"
+            ></gov-progress-bar>
+          </div>
 
-              {/* Controls and Interactions */}
-              <div className="bg-white rounded-lg shadow-md p-6 space-y-6">
-                <h2 className="text-xl font-semibold mb-4">
-                  Dashboard Controls
-                </h2>
+          {/* Metric Selector */}
+          <div className="bg-white rounded-2xl p-6 shadow space-y-4">
+            <h2 className="text-lg font-semibold text-gray-700">Performance Metric</h2>
+            <p className="text-sm text-gray-500">Choose which metric you'd like to emphasize in the charts below.</p>
+            <div className="flex gap-2">
+              {[
+                "revenue",
+                "users",
+                "engagement"
+              ].map((metric) => (
+                <gov-chip
+                  key={metric}
+                  onClick={() => setSelectedMetric(metric)}
+                  id={metric}
+                  label={metric}
+                  selected={selectedMetric === metric ? "true" : "false"}
+                ></gov-chip>
+              ))}
+            </div>
+          </div>
+        </div>
 
-                {/* Slider */}
-                <gov-slider
-                  onChange={(e) => setSliderValue(Number(e.target.value))}
-                  min="0"
-                  max="100"
-                  step="1"
-                  label="Sensitivity"
-                  value={sliderValue}
-                ></gov-slider>        
-                {/* Progress Indicator */}
-                <gov-progress-bar
-                  progress={sliderValue}
-                  label="Project Completion"  
-                  variant="primary"
-                  type="linear"
-                  animation-delay=""
-                  animation=""
-                  animation-speed=""
-                ></gov-progress-bar>
-              </div>
+        {/* Data Visualizations */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white rounded-2xl p-6 shadow">
+            <h2 className="text-xl font-semibold text-gray-700 mb-4">Bubble Chart Analysis</h2>
+            <p className="text-sm text-gray-500 mb-2">Visualize correlations and outliers across dimensions like user activity and revenue with bubble sizes representing impact.</p>
+            <div className="h-96">
+              <gov-chart
+                type="bubble"
+                data='{"datasets":[{"label":"Bubble Dataset","backgroundColor":["rgba(54, 162, 235, 0.5)","rgba(255, 99, 132, 0.5)","rgba(75, 192, 192, 0.5)","rgba(153, 102, 255, 0.5)","rgba(255, 99, 132, 0.5)"],"borderColor":["rgb(54, 162, 235)","rgb(255, 99, 132)","rgb(75, 192, 192)","rgb(153, 102, 255)","rgb(255, 99, 132)"],"data":[{"x":1,"y":15000,"r":40},{"x":2,"y":20000,"r":15},{"x":3,"y":18000,"r":50},{"x":4,"y":22000,"r":18},{"x":2,"y":10000,"r":60},{"x":0.5,"y":10000,"r":10},{"x":1,"y":5000,"r":15}]}]}'
+                options='{"responsive":true,"plugins":{"legend":{"display":true,"position":"top"}},"scales":{"x":{"type":"linear","position":"bottom","beginAtZero":true},"y":{"type":"linear","beginAtZero":true}}}'
+              ></gov-chart>
             </div>
           </div>
 
-          {/*accordian*/}
-          <p className="h1">Dashboard Breakdown</p>
-      <gov-row>
-        <gov-accordion
-          open-index="3"
-          animation-delay="2s"
-          animation=""
-          animation-speed="slow"
-        >
-          <gov-accordion-item title="Performance Metrics Overview">
-            Dive into our comprehensive performance tracking system. This section allows you to monitor key metrics including revenue, user growth, and engagement levels. 
-            Use the comparison mode switcher to toggle between different view perspectives and select specific metrics of interest using the chip-based navigation.
-          </gov-accordion-item>
-
-          <gov-accordion-item title="Visual Data Representations">
-            Explore advanced data visualization techniques through our interactive charts:
-            - Bubble Chart: Analyze complex data relationships with a multi-dimensional view showing correlations between different performance indicators.
-            - Polar Area Chart: Visualize quarterly revenue distribution, providing a clear breakdown of financial performance across different periods.
-          </gov-accordion-item>
-
-          <gov-accordion-item title="Dashboard Controls and Interactions">
-            Customize your dashboard experience with intuitive control mechanisms:
-            - Sensitivity Slider: Adjust the granularity of data representation.
-            - View Mode Radio Buttons: Switch between compact, detailed, and extended views.
-            - Progress Indicator: Track project completion and key performance metrics in real-time.
-          </gov-accordion-item>
-
-          <gov-accordion-item title="Layout and Navigation">
-            Navigate seamlessly through our comprehensive dashboard:
-            - Top Bar: Quick access to Home, Profile, and Settings.
-            - Sidebar: Easy navigation to key sections including Dashboard, Applications, and Components.
-            - User Profile: Personalized access with avatar and user-specific menu options.
-          </gov-accordion-item>
-        </gov-accordion>
-      </gov-row>
+          <div className="bg-white rounded-2xl p-6 shadow">
+            <h2 className="text-xl font-semibold text-gray-700 mb-4">Quarterly Revenue Distribution</h2>
+            <p className="text-sm text-gray-500 mb-2">See how revenue is distributed across the fiscal quarters to track seasonal trends and performance shifts.</p>
+            <div className="h-96">
+              <gov-chart
+                data='{"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Revenue","backgroundColor":["rgba(54, 162, 235, 0.5)","rgba(255, 99, 132, 0.5)","rgba(75, 192, 192, 0.5)","rgba(153, 102, 255, 0.5)"],"borderColor":["rgb(54, 162, 235)","rgb(255, 99, 132)","rgb(75, 192, 192)","rgb(153, 102, 255)"],"borderWidth":1,"data":[15000,20000,18000,22000]}]}'
+                options='{"responsive":true,"plugins":{"legend":{"display":true,"position":"top"}}}'
+              ></gov-chart>
+            </div>
+          </div>
         </div>
-      </MainLayout>
+      </div>
+    </MainLayout>
   );
 }
