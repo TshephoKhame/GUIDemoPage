@@ -222,15 +222,18 @@ export default function Home() {
             ></gov-button>
             <gov-button
               clicked={handleRegistrationClick}
-              type-variant="button"
-              size="xxl"
+             type-variant="button"
+              size="lg"
               border-radius="5px"
               variant="black"
               label="Register"
             
              
+
             ></gov-button>
           </gov-box>
+
+
         </gov-row>
 
         {/* model for loging */}
@@ -246,6 +249,7 @@ export default function Home() {
           close-on-esc="true"
           show-footer="false"
         >
+
           <div style={{ padding: "0px 20px" }}>
             <gov-tabs tab-list='["1GovID","Phone","Email"]' active-tab="1GovID">
               <div slot="1GovID">
@@ -292,8 +296,8 @@ export default function Home() {
                   >
                     <gov-button
                       label="Login"
-                      size="lg "
-                      variant="success"
+                      size="lg"
+                      variant="blue"
                       clicked={Login}
                     ></gov-button>
                   </gov-row>
@@ -341,10 +345,11 @@ export default function Home() {
                     justify="center"
                     className="mt-20 mb-8"
                   >
+
                     <gov-button
                       label="Login"
                       size="lg"
-                      variant="success"
+                      variant="blue"
                       clicked={Login}
                     ></gov-button>
                   </gov-row>
@@ -395,7 +400,8 @@ export default function Home() {
                     <gov-button
                       label="Login"
                       size="lg"
-                      variant="success"
+                      variant="blue"
+                      
                       clicked={Login}
                     ></gov-button>
                   </gov-row>
@@ -404,6 +410,7 @@ export default function Home() {
             </gov-tabs>
           </div>
         </gov-modal>
+
 
         {/* popup for registration */}
         <gov-modal
@@ -502,7 +509,7 @@ export default function Home() {
                   enc-type="application/x-www-form-urlencoded"
                   submit-btn-text="Register"
                   hide-cancel-btn="true"
-                  variant="success"
+                  variant="blue"
                 >
                   <gov-input
                     label="Passport Number"
@@ -558,6 +565,7 @@ export default function Home() {
                     type="tel"
                     placeholder="Enter your phone number"
                     is-valid="true"
+                    
                     is-touched="false"
                     validation-pattern="^267\d{8}$"
                     required="true"
