@@ -87,7 +87,6 @@ export default function Home() {
           >
             <p className="header-max white-text">Botswana E-Services Portal</p>
           </gov-row>
-
           <gov-row
             align="start"
             justify="center"
@@ -96,7 +95,6 @@ export default function Home() {
             classes=""
           ></gov-row>
         </div>
-
         {/* footer */}
         <gov-row
           align="between"
@@ -104,7 +102,7 @@ export default function Home() {
           gap="10px"
           reverse="false"
           classes=""
-    
+
           style={{ height: "35vh", padding: "40px" }}
         >
           {/* left side of footer */}
