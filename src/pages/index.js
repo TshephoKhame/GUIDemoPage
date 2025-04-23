@@ -86,7 +86,7 @@ export default function Home() {
             reverse="false"
             classes="header-row" //added class to apply margin-bottom
           >
-            <p className="header-max white-text">Botswana E-Services Portal</p>
+            <p className="header-max white-text"> Welcome to 1Gov e-Services Portal</p>
           </gov-row>
           <gov-row
             align="start"
@@ -214,7 +214,7 @@ export default function Home() {
             <gov-button
               clicked={handleLoginClick}
               type-variant="button"
-              size="xxl"
+              size="lg"
               variant="white"
               border-radius="5px"
               label="Login"
@@ -228,11 +228,10 @@ export default function Home() {
              type-variant="button"
               size="lg"
               border-radius="5px"
+              variant="black"
              
               label="Register"
-            
-            
-             
+      
 
             ></gov-button>
           </gov-box>
