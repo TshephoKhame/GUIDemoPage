@@ -133,6 +133,7 @@ export default function Home() {
                       text="e-support@gov.bw"
                       position="bottom"
                       color="#171717"
+
                     >
                       <gov-icon
                         name="envelope"
@@ -245,13 +246,15 @@ export default function Home() {
           id="LoginDialog"
           header="Login"
           subheader="Complete the form below to access your account."
-          size="large"
+          size="large" 
           is-open={isLoginOpen}
           backdrop-close="true"
           disable-close="false"
           close-on-esc="true"
           show-footer="false"
         >
+
+
 
           <div style={{ padding: "0px 20px" }}>
             <gov-tabs tab-list='["1GovID","Phone","Email"]' active-tab="1GovID">
