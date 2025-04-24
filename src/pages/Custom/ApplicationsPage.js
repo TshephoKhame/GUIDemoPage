@@ -99,7 +99,13 @@ export default function  () {
   return (
     <gov-tabs 
       tab-list='["Submitted","Drafts"]' 
-      active-tab="Submitted" 
+      active-tab="Submitted"
+      tab-variant="no-background" 
+      body-styles='{"border":"none"}'
+      styles='{"border": "none"}'
+      header-styles='{"border":"none","width":"220px","border-radius":"0px"}'
+      active-button-styles='{"color":"black","border":"none"}'
+      inactive-button-styles='{"color":"gray","border":"none"}'
     >
 
     <div slot="Submitted" style={{}}>

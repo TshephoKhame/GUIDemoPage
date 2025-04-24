@@ -225,7 +225,7 @@ export default function Home() {
               size="xxl"
               variant="black"
               label="Register"
-              styles={{}}
+              styles={{padding:"20px 65px"}}
             ></gov-button>
           </gov-box>
         </gov-row>
@@ -244,7 +244,15 @@ export default function Home() {
           show-footer="false"
         >
           <div style={{ padding: "0px 20px" }}>
-            <gov-tabs tab-list='["1GovID","Phone","Email"]' active-tab="1GovID">
+            <gov-tabs 
+              tab-list='["1GovID","Phone","Email"]' 
+              active-tab="1GovID" 
+              body-styles='{"border":"none"}'
+              styles={{border:"none"}}
+              header-styles='{"border":"none","border-radius":"0px"}'
+              active-button-styles={{color:"black", border:"none"}}
+              inactive-button-styles='{"color":"gray","border":"none"}'
+              >
               <div slot="1GovID">
                 <div style={{ padding: "30px" }}>
                   <gov-input
