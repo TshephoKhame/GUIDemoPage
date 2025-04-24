@@ -60,11 +60,14 @@ export default function Home() {
         <div style={{ height: "60vh" }}>
           {/*coat of arms row */}
           <gov-row
+          
             align="start"
             justify="center"
             gap="10px"
             reverse="false"
             classes=""
+           
+            
           >
             {/*renders coat of arms image */}
             <gov-tooltip
@@ -84,9 +87,10 @@ export default function Home() {
             justify="center"
             gap="10px"
             reverse="false"
-            classes=""
+            
+             classes="header-row"
           >
-            <p className="header-max white-text">Botswana E-Services Portal</p>
+            <p className="header-max white-text"> Welcome to 1Gov e-Services Portal</p>
           </gov-row>
 
           <gov-row
@@ -133,7 +137,7 @@ export default function Home() {
                     <gov-tooltip
                       text="e-support@gov.bw"
                       position="bottom"
-                      color="light"
+                      color="black"
                     >
                       <gov-icon
                         name="envelope"
@@ -144,7 +148,7 @@ export default function Home() {
                     <gov-tooltip
                       text="+26773996013"
                       position="bottom"
-                      color="light"
+                      color="black"
                     >
                       <gov-icon
                         name="phone"
@@ -161,7 +165,7 @@ export default function Home() {
                     <gov-tooltip
                       text="https://www.facebook.com/BotswanaGovernment/"
                       position="bottom"
-                      color="light"
+                     color="light"
                     >
                       <gov-icon
                         name="facebook"
@@ -180,7 +184,8 @@ export default function Home() {
                     <gov-tooltip
                       text="https://www.instagram.com/bwgov/"
                       position="bottom"
-                      color="light"
+                   
+                       color="light"
                     >
                       <gov-icon
                         name="instagram"
@@ -218,7 +223,7 @@ export default function Home() {
               size="xxl"
               variant="white"
               label="Login"
-              styles={{padding:"20px 60px"}}
+              styles={{padding:"20px 70px"}}
             ></gov-button>
             <gov-button
               clicked={handleRegistrationClick}
@@ -226,7 +231,7 @@ export default function Home() {
               size="xxl"
               variant="black"
               label="Register"
-              styles={{padding:"20px 60px"}}
+              styles={{padding:"20px 70px"}}
             ></gov-button>
           </gov-box>
         </gov-row>
