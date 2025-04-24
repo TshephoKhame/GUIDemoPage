@@ -3,11 +3,28 @@ import { useState, useEffect, useRef  } from "react";
 export default function MainLayout({ children, showLoginToaster = false,toasterHeader="",toasterText="",toasterVarient ="",toasterAnimation=""}) {
   const [showToaster, setShowToaster] = useState(showLoginToaster);
   const alert = useRef(null);
-
+ 
+  
    useEffect(() => {
       const openAlert = alert.current;
-      setTimeout(() =>  openAlert.close(), 10000);
-
+      if(openAlert){
+         setTimeout(() =>  openAlert.close(), 10000);
+      }
+     // Define functions directly on the window object
+    window.infoFunction = function() {
+        console.log('info button clicked!');
+        window.alert('info clicked!');
+      };
+  
+      window.bellFunction = function() {
+        console.log('Bell button clicked!');
+        window.alert('Bell clicked!');
+      };
+  
+      window.userFunction = function() {
+        console.log('user button clicked!');
+        window.alert('user clicked!');
+      };
     }, []);
   return (
     <div style={{ position: "relative" }}>
@@ -30,10 +47,9 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
 
       )}
       <gov-layout
-        layoutlogo="../../assets/1gov.png"
-        top-Bar-Items='[
-        
-        ]'
+        layoutlogo="https://1gov.gov.bw/main-icon.png"
+        show-Top-Bar-Avatar='true'
+        top-Bar-Items='[]'
         sidebar-Items='[
         { "label": "Home", "link": "/dashboard", "icon": "homeOutline" },
         { "label": "Applications", "link": "/applications", "icon": "annotation" },
@@ -54,9 +70,9 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
         avatar-Initials="AP"
         menu-Type="site"
         icon-Buttons='[
-            {"icon": "search", "size": "24px", "variant": "primary", "action": "searchFunction"},
-            {"icon": "bell", "size": "24px", "variant": "secondary", "action": "bellFunction"},
-            {"icon": "heart", "size": "24px", "variant": "danger", "action": "settingsFunction"}
+            {"icon": "bell", "size": "24px", "variant": "primary", "action": "bellFunction"},
+            {"icon": "infoCircle", "size": "24px", "variant": "primary", "action": "infoFunction"},
+            {"icon": "user", "size": "24px", "variant": "primary", "action": "userFunction"}
           ]'
       >
         <div style={{}}>

@@ -1,6 +1,10 @@
 import React from 'react';
+import { useState, useEffect, useRef } from "react";
 
 export default function ServiceCatagories() {
+  const [isLoginOpen, setModal] = useState(false);
+  const modal = useRef(null); // Add this line to create the ref
+
   const serviceCategories = [
     {
       icon: "https://picsum.photos/400/300",
@@ -49,59 +53,78 @@ export default function ServiceCatagories() {
     }
   ];
 
+  useEffect(() => {
+    // Fixed: Changed model.current to modal.current
+    const sideModal = modal.current;
+
+    if (sideModal) { // Add a check to make sure the ref is not null
+      const closeModal = () => {
+        setModal(false);
+      };
+     
+      sideModal.addEventListener("closed", closeModal);
+  
+      return () => {
+        sideModal.removeEventListener("closed", closeModal);
+      };
+    }
+  }, []);  // Added empty dependency array to prevent infinite loop
+
+  const openModal = () => {
+    console.log("Open Modal clicked");
+    setModal(true);
+  };
+
+  // Added Login function that was used in onClick but not defined
+  const Login = () => {
+    console.log("Login clicked");
+    // Add your login logic here
+  };
+
   return (
-    
     <gov-box>
       <div style={{
-        // backgroundColor: '#f0f4f8',
         padding: '0px 20px 20px 0px',
         borderRadius: '8px'
       }}>
         <gov-box className="primary-bg border-radius-lg mb-10" style={{
-                padding:"15px 25px"
-            }}>
-            <gov-box style={{
-            }}>
-                <p
-                className="h2 fw-medium"
-                style={{
+          padding: "15px 25px"
+        }}>
+          <gov-box>
+            <p
+              className="h2 fw-medium"
+              style={{
                 margin: '0',
                 color: 'black'
-                }}>
-                    Hi Jakida
-                </p>
-                <p 
-                className="white-text h6"
-                style={{
+              }}>
+              Hi Jakida
+            </p>
+            <p
+              className="white-text h6"
+              style={{
                 margin: '0',
-                }}>
-                    Welcome to your 1Gov1Citizen Portal Dashboard
-                </p>
-            </gov-box>
+              }}>
+              Welcome to your 1Gov1Citizen Portal Dashboard
+            </p>
+          </gov-box>
 
-            <gov-row style={{
+          <gov-row style={{
             margin: '20px 0px'
-            }}>
-           
-            <gov-input 
-                type="search" 
-                placeholder="Search all available e-Services" 
-                icon="search"
-                style={{
-                  width: '100%',
-                  
-                  }}
-                styles={{
-                    width: '100%',
-                    borderRadius: '5px',
-                    fontSize: '16px',
-                    gap: '10px',
-                    }}>
+          }}>
+            <gov-input
+              type="search"
+              placeholder="Search all available e-Services"
+              icon="search"
+              style={{
+                width: '100%',
+              }}
+              styles={{ padding: "8px", borderRadius: "10px", width: "100%" }}
+            >
             </gov-input>
-            </gov-row>
+          </gov-row>
         </gov-box>
 
-        <div 
+        <div
           style={{
             marginBottom: '10px',
             padding: '0px 0px',
@@ -119,60 +142,76 @@ export default function ServiceCatagories() {
           <span className='h5 fw-bold'>228</span> <span className='h6'>services available</span>
         </div>
 
-             
-
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
           gap: '20px'
         }}>
-           
           {serviceCategories.map((service, index) => (
-            <gov-card   
+            <gov-card
+              onclick={openModal}
               onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} 
-              show-button='false'  
-              className='border bw-1 border-radius-lg shadow d-flex align-center' 
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              show-button='false'
+              style={{cursor: 'pointer'}}
+              className='border bw-1 border-radius-lg shadow d-flex align-center'
               key={index}>
-            <gov-row 
-            >
-              <img 
-                src={service.icon} 
-                alt={service.title}
-                className='m-10 border-radius'
-                style={{
-                  width: '100px',
-                  height: '100px',
-                  objectFit: 'cover',
-                  borderRadius: '8px',
-                }}
-              />
-              <gov-box is-flex-box="true"  align="center" justify="space-between" className="" gap='20px' style={{flexDirection:'column',height:'100%',marginLeft:'10px',padding:'10px 0px'}}>
-              <h3 style={{
-                color: '#2c3e50',
-                fontSize: '16px',
-                marginBottom: '10px',
-                fontWeight: 'bold'
-              }}>
-                {service.title}
-              </h3>
-              
-              <div
-               className='primary-bg'
-              style={{
-                color: '#fff',
-                padding: '5px 10px',
-                borderRadius: '20px',
-                fontSize: '14px'
-              }}>
-                {service.serviceCount} Services
-              </div>
-              </gov-box>
-            </gov-row>
+              <gov-row>
+                <img
+                  src={service.icon}
+                  alt={service.title}
+                  className='m-10 border-radius'
+                  style={{
+                    width: '100px',
+                    height: '100px',
+                    objectFit: 'cover',
+                    borderRadius: '8px',
+                  }}
+                />
+                <gov-box is-flex-box="true" align="center" justify="space-between" className="" gap='20px' style={{ flexDirection: 'column', height: '100%', marginLeft: '10px', padding: '10px 0px' }}>
+                  <h3 style={{
+                    color: '#2c3e50',
+                    fontSize: '16px',
+                    marginBottom: '10px',
+                    fontWeight: 'bold'
+                  }}>
+                    {service.title}
+                  </h3>
+
+                  <div
+                    className='primary-bg'
+                    style={{
+                      color: '#fff',
+                      padding: '5px 10px',
+                      borderRadius: '20px',
+                      fontSize: '14px'
+                    }}>
+                    {service.serviceCount} Services
+                  </div>
+                </gov-box>
+              </gov-row>
             </gov-card>
           ))}
         </div>
       </div>
+
+      {/* Modal */}
+      <gov-modal
+        ref={modal}
+        id="LoginDialog"
+        header="Login"
+        subheader="Complete the form below to access your account."
+        size="large"
+        is-open={isLoginOpen}
+        backdrop-close="true"
+        disable-close="false"
+        close-on-esc="true"
+        show-footer="false"
+      >
+        <div style={{ padding: "0px 20px", border: "none" }}>
+         <p>Hello</p>
+        </div>
+      </gov-modal>
     </gov-box>
   );
 }

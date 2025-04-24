@@ -56,7 +56,7 @@ export default function Components() {
           <h2 className="text-xl font-semibold mb-2">Badge</h2>
           <gov-badge variant="success">Success</gov-badge>
           <gov-badge variant="warning">Warning</gov-badge>
-          <gov-badge variant="error">Error</gov-badge>
+          <gov-badge variant="danger">Error</gov-badge>
         </section>
 
         {/* Dropdown */}
