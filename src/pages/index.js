@@ -425,7 +425,15 @@ export default function Home() {
           show-footer="false"
         >
           <div style={{ padding: "0px 20px" }}>
-            <gov-tabs tab-list='["Citizen","Non-citizen"]' active-tab="Citizen">
+            <gov-tabs 
+              tab-list='["Citizen","Non-citizen"]'
+              active-tab="Citizen"
+              body-styles='{"border":"none"}'
+              styles={{border:"none"}}
+              header-styles='{"border":"none","border-radius":"0px"}'
+              active-button-styles={{color:"black", border:"none"}}
+              inactive-button-styles='{"color":"gray","border":"none"}'
+              >
               <div slot="Citizen">
                 <gov-form
                   header=""

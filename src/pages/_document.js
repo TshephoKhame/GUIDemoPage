@@ -18,7 +18,8 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* Add viewport meta tag here */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
+        <meta content="width=device-width, initial-scale=1.0" />
       </Head>
       <body className="antialiased body">
         <Main />
