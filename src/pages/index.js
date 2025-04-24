@@ -218,6 +218,7 @@ export default function Home() {
               size="xxl"
               variant="white"
               label="Login"
+              styles={{padding:"20px 60px"}}
             ></gov-button>
             <gov-button
               clicked={handleRegistrationClick}
@@ -225,7 +226,7 @@ export default function Home() {
               size="xxl"
               variant="black"
               label="Register"
-              styles={{padding:"20px 65px"}}
+              styles={{padding:"20px 60px"}}
             ></gov-button>
           </gov-box>
         </gov-row>

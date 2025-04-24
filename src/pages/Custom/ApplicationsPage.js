@@ -284,14 +284,8 @@ export default function  () {
     </div>
     <div slot="Drafts">
       <div style={{ padding: "35px 20px" }}>
-        <div
-          className="h2"
-          style={{
-            marginBottom: "15px",
-            color: "#666",
-          }}
-        >
-          Total: 15
+        <div className="h2 black-text mb-30" style={{}}>
+          Total: {serviceData.length}
         </div>
         <gov-table
           headings='["ServiceID","Title","Submitted","Status"]'
