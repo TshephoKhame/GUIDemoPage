@@ -1,27 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect, useRef  } from "react";
 
 export default function MainLayout({ children, showLoginToaster = false,toasterHeader="",toasterText="",toasterVarient ="",toasterAnimation=""}) {
   const [showToaster, setShowToaster] = useState(showLoginToaster);
+  const alert = useRef(null);
+
+   useEffect(() => {
+      const openAlert = alert.current;
+      setTimeout(() =>  openAlert.close(), 10000);
+
+    }, []);
   return (
     <div style={{ position: "relative" }}>
       {showToaster && (
-        <div
+          <gov-alert
+          ref={alert}
           style={{
             position: "fixed",
             top: "10px",
-            right: "10px",
+            right: "-50px",
             zIndex: 1000000,
             width: "400px",
           }}
-        >
-          <gov-alert
-            header= {toasterHeader}
-            label={toasterText}
-            variant={toasterVarient}
-            animation={toasterAnimation}
-            onClose={() => setShowToaster(false)}
-          ></gov-alert>
-        </div>
+          header= {toasterHeader}
+          label={toasterText}
+          variant={toasterVarient}
+          animation={toasterAnimation}
+          onClose={() => setShowToaster(false)}
+        ></gov-alert>
+
       )}
       <gov-layout
         layoutlogo="../../assets/1gov.png"
@@ -53,7 +59,7 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
             {"icon": "heart", "size": "24px", "variant": "danger", "action": "settingsFunction"}
           ]'
       >
-        <div style={{ padding: "10px 0px" }}>
+        <div style={{}}>
           {children}
         </div>
       </gov-layout>
