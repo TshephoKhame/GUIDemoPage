@@ -554,20 +554,11 @@ export default function Home() {
                     label="Phone Number"
                     type="tel"
                     placeholder="Enter your phone number"
-                    is-valid="true"
-                    is-touched="false"
-                    validation-pattern="^267\d{8}$"
-                    required="true"
-                    error-message="Phone number must start with 267 and be 11 digits long (e.g., 26777380956)"
-                    required-error-message="This field is required"
-                  ></gov-input>
-                  <gov-checkbox
-                    label="I agree to the terms and conditions"
-                    required="true"
-                  ></gov-checkbox>
-                </gov-form>
-              </div>
-            </gov-tabs>
+                    is-valid="true">
+                    </gov-input>
+                    </gov-form>
+                    </div>
+         </gov-tabs>
           </div>
         </gov-modal>
       </gov-box>
