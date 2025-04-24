@@ -17,7 +17,7 @@ export default function InventoryDashboard() {
         {/* Header */}
         <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", marginBottom: "2rem" }}>
           <div>
-            <gov-breadcrumb animation="fadeIn" animationDelay="2s" animationSpeed="slower" />
+            <gov-breadcrumb />
             <h1 style={{ fontSize: "2rem", fontWeight: "bold", marginTop: "0.5rem", color: "#1f2937" }}>Inventory</h1>
           </div>
 
@@ -37,7 +37,7 @@ export default function InventoryDashboard() {
         {/* Filters and Settings */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem", marginBottom: "2rem" }}>
           {/* Inventory Filters */}
-          <gov-card show-button="false">
+          <gov-card show-button="false" className='border bw-1 border-radius-lg shadow'>
             <div style={{ padding: "1rem" }}>
               <h2 style={{ fontSize: "1.25rem", fontWeight: "600", color: "#374151", marginBottom: "1rem" }}>Inventory Filters</h2>
               <gov-radiobutton
@@ -53,7 +53,7 @@ export default function InventoryDashboard() {
           </gov-card>
 
           {/* Real-Time Settings */}
-          <gov-card show-button="false">
+          <gov-card show-button="false" className='border bw-1 border-radius-lg shadow '>
             <div style={{ padding: "1rem" }}>
               <h2 style={{ fontSize: "1.25rem", fontWeight: "600", color: "#374151", marginBottom: "1rem" }}>Real-Time Settings</h2>
               <div style={{ marginBottom: "1.5rem" }}>
@@ -79,7 +79,7 @@ export default function InventoryDashboard() {
           <h2 style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#1f2937", marginBottom: "1.5rem" }}>Inventory Overview</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem", marginBottom: "2rem" }}>
             
-            <gov-card show-button="false">
+            <gov-card show-button="false" className='border bw-1 border-radius-lg shadow '>
               <div style={{ padding: "1rem" }}>
                 <h3 style={{ fontSize: "1rem", fontWeight: "600", color: "#374151" }}>Items in Stock</h3>
                 <p style={{ fontSize: "2rem", fontWeight: "bold", color: "#16a34a" }}>1,240</p>
@@ -87,7 +87,7 @@ export default function InventoryDashboard() {
               </div>
             </gov-card>
 
-            <gov-card show-button="false">
+            <gov-card show-button="false" className='border bw-1 border-radius-lg shadow '>
               <div style={{ padding: "1rem" }}>
                 <h3 style={{ fontSize: "1rem", fontWeight: "600", color: "#374151" }}>Low Stock</h3>
                 <p style={{ fontSize: "2rem", fontWeight: "bold", color: "#eab308" }}>96</p>
@@ -95,7 +95,7 @@ export default function InventoryDashboard() {
               </div>
             </gov-card>
 
-            <gov-card show-button="false">
+            <gov-card show-button="false" className='border bw-1 border-radius-lg shadow '>
               <div style={{ padding: "1rem" }}>
                 <h3 style={{ fontSize: "1rem", fontWeight: "600", color: "#374151" }}>Out of Stock</h3>
                 <p style={{ fontSize: "2rem", fontWeight: "bold", color: "#dc2626" }}>24</p>

@@ -153,10 +153,10 @@ export default function ServiceCatagories() {
               onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
               onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
               show-button='false'
-              style={{cursor: 'pointer'}}
+              style={{cursor: 'pointer' , overflow: 'hidden', minWidth:'250px'}}
               className='border bw-1 border-radius-lg shadow d-flex align-center'
               key={index}>
-              <gov-row>
+              <gov-row styles={{minWidth:'250px'}}>
                 <img
                   src={service.icon}
                   alt={service.title}
@@ -166,6 +166,7 @@ export default function ServiceCatagories() {
                     height: '100px',
                     objectFit: 'cover',
                     borderRadius: '8px',
+                    
                   }}
                 />
                 <gov-box is-flex-box="true" align="center" justify="space-between" className="" gap='20px' style={{ flexDirection: 'column', height: '100%', marginLeft: '10px', padding: '10px 0px' }}>
