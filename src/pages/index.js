@@ -244,7 +244,7 @@ export default function Home() {
           close-on-esc="true"
           show-footer="false"
         >
-          <div style={{ padding: "0px 20px" }}>
+          <div style={{ padding: "0px 20px",border:"none" }}>
             <gov-tabs 
               tab-list='["1GovID","Phone","Email"]' 
               active-tab="1GovID" 
@@ -269,6 +269,7 @@ export default function Home() {
                     required="false"
                     error-message="Invalid input"
                     required-error-message="This field is required"
+                    styles={{padding:"8px", borderRadius:"10px", width:"100%"}}
                   ></gov-input>
                   <div style={{ padding: "8px" }}></div>
                   <gov-input
@@ -284,6 +285,7 @@ export default function Home() {
                     required="false"
                     error-message="Invalid input"
                     required-error-message="This field is required"
+                    styles={{padding:"8px", borderRadius:"10px", width:"100%"}}
                   ></gov-input>
                   <gov-row align="center">
                     <p className="caption mr-5">Forgot your password? </p>
@@ -320,6 +322,7 @@ export default function Home() {
                     required="true"
                     error-message="Phone number must start with 267 and be 11 digits long (e.g., 26777380956)"
                     required-error-message="This field is required"
+                    styles={{padding:"8px", borderRadius:"10px", width:"100%"}}
                   ></gov-input>
                   <div style={{ padding: "8px" }}></div>
                   <gov-input
@@ -335,6 +338,7 @@ export default function Home() {
                     required="true"
                     error-message="Invalid input"
                     required-error-message="This field is required"
+                    styles={{padding:"8px", borderRadius:"10px", width:"100%"}}
                   ></gov-input>
                   <gov-row align="center">
                     <p className="caption mr-5">Forgot your password? </p>
@@ -352,6 +356,7 @@ export default function Home() {
                       size="lg"
                       variant="success"
                       clicked={Login}
+                      styles={{padding:"20px 60px"}}
                     ></gov-button>
                   </gov-row>
                 </div>
@@ -371,6 +376,7 @@ export default function Home() {
                     required="false"
                     error-message="Invalid input"
                     required-error-message="This field is required"
+                    styles={{padding:"8px", borderRadius:"10px", width:"100%"}}
                   ></gov-input>
                   <div style={{ padding: "8px" }}></div>
                   <gov-input
@@ -386,6 +392,7 @@ export default function Home() {
                     required="false"
                     error-message="Invalid input"
                     required-error-message="This field is required"
+                    styles={{padding:"8px", borderRadius:"10px", width:"100%"}}
                   ></gov-input>
                   <gov-row align="center">
                     <p className="caption mr-5">Forgot your password? </p>

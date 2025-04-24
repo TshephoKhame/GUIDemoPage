@@ -266,7 +266,7 @@ export default function  () {
               </div>
               <div style={{ width: "200px",  minWidth: "200px", textAlign: "left" }}>
                 <div
-                  className="secondary-bg info-text h6 w-40 fw-bold"
+                  className="secondary-bg info-text h6 w-40 "
                   style={{
                     padding: "5px 15px",
                     borderRadius: "12px",
