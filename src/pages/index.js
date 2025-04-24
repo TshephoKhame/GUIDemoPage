@@ -222,9 +222,10 @@ export default function Home() {
             <gov-button
               clicked={handleRegistrationClick}
               type-variant="button"
-              size="lg"
-              variant="white"
+              size="xxl"
+              variant="black"
               label="Register"
+              styles={{}}
             ></gov-button>
           </gov-box>
         </gov-row>

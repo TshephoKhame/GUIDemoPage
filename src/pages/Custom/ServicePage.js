@@ -50,6 +50,7 @@ export default function ServiceCatagories() {
   ];
 
   return (
+    
     <gov-box>
       <div style={{
         // backgroundColor: '#f0f4f8',
@@ -62,7 +63,7 @@ export default function ServiceCatagories() {
             <gov-box style={{
             }}>
                 <p
-                className="h2"
+                className="h2 fw-medium"
                 style={{
                 margin: '0',
                 color: 'black'
@@ -70,7 +71,7 @@ export default function ServiceCatagories() {
                     Hi Jakida
                 </p>
                 <p 
-                className="white-text"
+                className="white-text h6"
                 style={{
                 margin: '0',
                 }}>
@@ -87,9 +88,14 @@ export default function ServiceCatagories() {
                 placeholder="Search all available e-Services" 
                 icon="search"
                 style={{
+                  width: '100%',
+                  
+                  }}
+                styles={{
                     width: '100%',
-                     borderRadius: '4px',
-                    fontSize: '16px'
+                    borderRadius: '5px',
+                    fontSize: '16px',
+                    gap: '10px',
                     }}>
             </gov-input>
             </gov-row>
@@ -120,35 +126,15 @@ export default function ServiceCatagories() {
           gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
           gap: '20px'
         }}>
-            {/* {serviceCategories.map((service, index) => (
-            <gov-row 
-              key={index}
-            >
-              <gov-card
-              className='border bw-1 border-radius-lg shadow d-flex align-center'
-              style={{
-                cursor: 'pointer',
-                width:'100%',
-                height:'80%',
-                marginBottom: '10px'
-              }}
-               card-title={service.title} 
-               description=""
-               image-src={service.icon} 
-               button-text={`${service.serviceCount} Services`}
-               alignment="horizontal" //horizontal vertical
-               image-clip="fill" >
-            </gov-card>
-            </gov-row>
-          ))} */}
+           
           {serviceCategories.map((service, index) => (
-            <gov-card show-button='false'  className='border bw-1 border-radius-lg shadow d-flex align-center' key={index}>
+            <gov-card   
+              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'} 
+              show-button='false'  
+              className='border bw-1 border-radius-lg shadow d-flex align-center' 
+              key={index}>
             <gov-row 
-             
-             
-             
-            //   onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-            //   onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
             >
               <img 
                 src={service.icon} 
