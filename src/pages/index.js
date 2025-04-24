@@ -213,7 +213,7 @@ export default function Home() {
           >
             
             <gov-button
-              clicked={handleLoginClick}
+              onClick={handleLoginClick}
               type-variant="button"
               size="xxl"
               variant="white"
@@ -221,7 +221,7 @@ export default function Home() {
               styles={{padding:"20px 60px"}}
             ></gov-button>
             <gov-button
-              clicked={handleRegistrationClick}
+              onClick={handleRegistrationClick}
               type-variant="button"
               size="xxl"
               variant="black"

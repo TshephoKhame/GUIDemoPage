@@ -2,83 +2,64 @@ import React from 'react';
 import { useState, useEffect, useRef } from "react";
 
 export default function ServiceCatagories() {
-  const [isLoginOpen, setModal] = useState(false);
-  const modal = useRef(null); // Add this line to create the ref
+  const popup = useRef(null); 
 
   const serviceCategories = [
     {
-      icon: "https://picsum.photos/400/300",
+      icon: "./ICT_and_media_services.png",
       title: "Business Facilitation ",
       serviceCount: 24
     },
     {
-      icon: "https://picsum.photos/400/300",
+      icon: "./ICT_and_media_services.png",
       title: "Education & Learning",
       serviceCount: 5
     },
     {
-      icon: "https://picsum.photos/400/300",
+      icon: "./ICT_and_media_services.png",
       title: "Government Services",
       serviceCount: 2
     },
     {
-      icon: "https://picsum.photos/400/300",
+      icon: "./ICT_and_media_services.png",
       title: "Employment & Labour ",
       serviceCount: 45
     },
     {
-      icon: "https://picsum.photos/400/300",
+      icon: "./ICT_and_media_services.png",
       title: "ICT & Media Services",
       serviceCount: 2
     },
     {
-      icon: "https://picsum.photos/400/300",
+      icon: "./ICT_and_media_services.png",
       title: "Immigration & Citizen",
       serviceCount: 17
     },
     {
-      icon: "https://picsum.photos/400/300",
+      icon: "./ICT_and_media_services.png",
       title: "Land & Housing",
       serviceCount: 12
     },
     {
-      icon: "https://picsum.photos/400/300",
+      icon: "./ICT_and_media_services.png",
       title: "Law, Crime & Justice",
       serviceCount: 47
     },
     {
-      icon: "https://picsum.photos/400/300",
+      icon: "./ICT_and_media_services.png",
       title: "Local Authority/Council",
       serviceCount: 5
     }
   ];
 
   useEffect(() => {
-    // Fixed: Changed model.current to modal.current
-    const sideModal = modal.current;
-
-    if (sideModal) { // Add a check to make sure the ref is not null
-      const closeModal = () => {
-        setModal(false);
-      };
-     
-      sideModal.addEventListener("closed", closeModal);
-  
-      return () => {
-        sideModal.removeEventListener("closed", closeModal);
-      };
-    }
   }, []);  // Added empty dependency array to prevent infinite loop
 
-  const openModal = () => {
-    console.log("Open Modal clicked");
-    setModal(true);
-  };
-
-  // Added Login function that was used in onClick but not defined
-  const Login = () => {
-    console.log("Login clicked");
-    // Add your login logic here
+  const openPopup = () => {
+    console.log("Open Popup clicked");
+    if (popup.current) {
+      popup.current.openModal();
+    }
   };
 
   return (
@@ -149,7 +130,8 @@ export default function ServiceCatagories() {
         }}>
           {serviceCategories.map((service, index) => (
             <gov-card
-              onclick={openModal}
+              // onclick={openModal}
+              onClick={openPopup}
               onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
               onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
               show-button='false'
@@ -197,22 +179,12 @@ export default function ServiceCatagories() {
       </div>
 
       {/* Modal */}
-      <gov-modal
-        ref={modal}
-        id="LoginDialog"
-        header="Login"
-        subheader="Complete the form below to access your account."
-        size="large"
-        is-open={isLoginOpen}
-        backdrop-close="true"
-        disable-close="false"
-        close-on-esc="true"
-        show-footer="false"
-      >
+      <gov-popups  ref={popup} id="modal1"  header="Are you sure you want to proceed?" subheader="Be sure of your choice." cancel-button-text="Cancel" confirm-button-text="Confirm" show-cancel-button="false" show-confirm-button="false" backdrop-close="true" disable-close="false">
         <div style={{ padding: "0px 20px", border: "none" }}>
-         <p>Hello</p>
-        </div>
-      </gov-modal>
+          <p>Hello</p>
+        </div>    
+      </gov-popups>
+
     </gov-box>
   );
 }
