@@ -470,6 +470,7 @@ export default function Home() {
                     error-message="Invalid input"
                     required-error-message="This field is required"
                   ></gov-input>
+
                   <gov-input
                     label="Middle Name"
                     type="text"
@@ -574,6 +575,7 @@ export default function Home() {
                     </div>
          </gov-tabs>
           </div>
+          
         </gov-modal>
       </gov-box>
     </div>
