@@ -101,7 +101,7 @@ export default function  () {
       tab-list='["Submitted","Drafts"]' 
       active-tab="Submitted"
       tab-variant="no-background" 
-      body-styles='{"border":"none"}'
+      body-styles='{"border":"none","box-shadow": "none"}'
       styles='{"border": "none"}'
       header-styles='{"border":"none","width":"220px","border-radius":"0px"}'
       active-button-styles='{"color":"black","border":"none"}'

@@ -99,7 +99,7 @@ export default function ServiceCatagories() {
               style={{
                 width: '100%',
               }}
-              styles={{ padding: "8px", borderRadius: "10px", width: "100%" }}
+              styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'
             >
             </gov-input>
           </gov-row>
@@ -178,10 +178,31 @@ export default function ServiceCatagories() {
         </div>
       </div>
 
-      {/* Modal */}
-      <gov-popups  ref={popup} id="modal1"  header="Are you sure you want to proceed?" subheader="Be sure of your choice." cancel-button-text="Cancel" confirm-button-text="Confirm" show-cancel-button="false" show-confirm-button="false" backdrop-close="true" disable-close="false">
+      {/* Popup */}
+      <gov-popups  ref={popup} id="modal1"  header="" subheader="" cancel-button-text="Cancel" confirm-button-text="Accept Conditions & Apply" show-cancel-button="true" show-confirm-button="true" backdrop-close="true" disable-close="false">
         <div style={{ padding: "0px 20px", border: "none" }}>
-          <p>Hello</p>
+        <h3 style={{ textAlign: "center" }}>General Conditions</h3>
+  <ul>
+    <li>This service is only applicable to citizens of Botswana aged 18 years and above.</li>
+    <li>The service is free of charge.</li>
+    <li>Clients will undergo an assessment conducted by a Social Welfare Officer or Community Development Officer.</li>
+    <li>This process will take 4 weeks before the client is given feedback.</li>
+    <li>
+      To be enrolled, applicants must meet the eligibility criteria specified in the 
+      <strong>Revised Destitute Policy of 2002</strong>, as provided by the Ministry of Local Government and Rural Development.
+    </li>
+  </ul>
+
+  <h4>Eligibility Criteria:</h4>
+  <p>To be considered for this service, the applicant must:</p>
+  <ul>
+    <li>
+      Be incapacitated by <strong>disabilities or chronic health conditions</strong>, unable to engage in sustainable economic activities, and have insufficient assets and income sources.
+    </li>
+    <li>Be earning or receiving an income of <strong>P300 per month or less</strong>.</li>
+    <li>Possess no more than <strong>six (6) livestock units</strong>.</li>
+    
+  </ul>
         </div>    
       </gov-popups>
 

@@ -3,47 +3,36 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 export default function Home() {
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const loginDialogRef = useRef(null);
   const registrationDialogRef = useRef(null);
   const router = useRouter();
 
   useEffect(() => {
-    const loginDialog = loginDialogRef.current;
-    const registrationDialog = registrationDialogRef.current;
-
-    const handleLoginClose = () => {
-      setIsLoginOpen(false);
-    };
-    const handleRegistrationClose = () => {
-      setIsRegistrationOpen(false);
-    };
-    loginDialog.addEventListener("closed", handleLoginClose);
-    registrationDialog.addEventListener("closed", handleRegistrationClose);
-
-    return () => {
-      loginDialog.removeEventListener("closed", handleLoginClose);
-      registrationDialog.removeEventListener("closed", handleRegistrationClose);
-    };
   }, []);
 
   const handleLoginClick = () => {
-    setIsLoginOpen(true);
+    if (loginDialogRef.current) {
+      loginDialogRef.current.openModal();
+    }
   };
 
   const handleRegistrationClick = () => {
-    setIsRegistrationOpen(true);
+    if (registrationDialogRef.current) {
+      registrationDialogRef.current.openModal();
+    }
   };
 
-  const Login = () => {
+  const login = () => {
     console.log("login");
     router.push("/dashboard");
   };
 
   return (
     <div
+
       style={{
+        height: "100vh",
         background:
           " linear-gradient(0deg ,var(--kcAlternativeBlue),var(--kcBotswanaBlue))",
       }}
@@ -211,14 +200,14 @@ export default function Home() {
             is-flex-box="true"
             classes=""
           >
-            
+
             <gov-button
               onClick={handleLoginClick}
               type-variant="button"
               size="xxl"
               variant="white"
               label="Login"
-              styles={{padding:"20px 60px"}}
+              styles='{"padding":"20px 60px"}'
             ></gov-button>
             <gov-button
               onClick={handleRegistrationClick}
@@ -226,34 +215,23 @@ export default function Home() {
               size="xxl"
               variant="black"
               label="Register"
-              styles={{padding:"20px 60px"}}
+              styles='{"padding":"20px 60px"}'
             ></gov-button>
           </gov-box>
         </gov-row>
 
         {/* model for loging */}
-        <gov-modal
-         ref={loginDialogRef}
-          id="LoginDialog"
-          header="Login"
-          subheader="Complete the form below to access your account."
-          size="large"
-          is-open={isLoginOpen}
-          backdrop-close="true"
-          disable-close="false"
-          close-on-esc="true"
-          show-footer="false"
-        >
-          <div style={{ padding: "0px 20px",border:"none" }}>
-            <gov-tabs 
-              tab-list='["1GovID","Phone","Email"]' 
-              active-tab="1GovID" 
-              body-styles='{"border":"none"}'
-              styles={{border:"none"}}
-              header-styles='{"border":"none","border-radius":"0px"}'
-              active-button-styles={{color:"black", border:"none"}}
+        <gov-popups ref={loginDialogRef} id="LoginDialog" header="Login" subheader="Complete the form below to access your account." cancel-button-text="Cancel" confirm-button-text="Confirm" show-cancel-button="false" show-confirm-button="false" backdrop-close="true" disable-close="false">
+          <div style={{ padding: "0px 20px", border: "none" }}>
+            <gov-tabs
+              tab-list='["1GovID","Phone","Email"]'
+              active-tab="1GovID"
+              body-styles='{"border":"none","box-shadow": "none","border-right":"none"}'
+              styles='{ "border": "none" }'
+              header-styles='{"border":"none","border-radius":"0px","border-right":"none"}'
+              active-button-styles='{ "color": "black", "border": "none" }'
               inactive-button-styles='{"color":"gray","border":"none"}'
-              >
+            >
               <div slot="1GovID">
                 <div style={{ padding: "30px" }}>
                   <gov-input
@@ -269,8 +247,7 @@ export default function Home() {
                     required="false"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                    styles={{padding:"8px", borderRadius:"10px", width:"100%"}}
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <div style={{ padding: "8px" }}></div>
                   <gov-input
                     label="Password"
@@ -285,8 +262,7 @@ export default function Home() {
                     required="false"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                    styles={{padding:"8px", borderRadius:"10px", width:"100%"}}
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-row align="center">
                     <p className="caption mr-5">Forgot your password? </p>
                     <p className="subtitle" style={{ cursor: "pointer" }}>
@@ -299,10 +275,10 @@ export default function Home() {
                     className="mt-20 mb-8"
                   >
                     <gov-button
+                      onClick={login}
                       label="Login"
                       size="lg"
                       variant="success"
-                      clicked={Login}
                     ></gov-button>
                   </gov-row>
                 </div>
@@ -322,8 +298,7 @@ export default function Home() {
                     required="true"
                     error-message="Phone number must start with 267 and be 11 digits long (e.g., 26777380956)"
                     required-error-message="This field is required"
-                    styles={{padding:"8px", borderRadius:"10px", width:"100%"}}
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <div style={{ padding: "8px" }}></div>
                   <gov-input
                     label="Password"
@@ -338,8 +313,7 @@ export default function Home() {
                     required="true"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                    styles={{padding:"8px", borderRadius:"10px", width:"100%"}}
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-row align="center">
                     <p className="caption mr-5">Forgot your password? </p>
                     <p className="subtitle" style={{ cursor: "pointer" }}>
@@ -352,11 +326,10 @@ export default function Home() {
                     className="mt-20 mb-8"
                   >
                     <gov-button
+                      onClick={login}
                       label="Login"
                       size="lg"
                       variant="success"
-                      clicked={Login}
-                      styles={{padding:"20px 60px"}}
                     ></gov-button>
                   </gov-row>
                 </div>
@@ -376,8 +349,7 @@ export default function Home() {
                     required="false"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                    styles={{padding:"8px", borderRadius:"10px", width:"100%"}}
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <div style={{ padding: "8px" }}></div>
                   <gov-input
                     label="Password"
@@ -392,8 +364,7 @@ export default function Home() {
                     required="false"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                    styles={{padding:"8px", borderRadius:"10px", width:"100%"}}
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-row align="center">
                     <p className="caption mr-5">Forgot your password? </p>
                     <p className="subtitle" style={{ cursor: "pointer" }}>
@@ -406,41 +377,31 @@ export default function Home() {
                     className="mt-20 mb-8"
                   >
                     <gov-button
+                      onClick={login}
+
                       label="Login"
                       size="lg"
                       variant="success"
-                      clicked={Login}
                     ></gov-button>
                   </gov-row>
                 </div>
               </div>
             </gov-tabs>
           </div>
-        </gov-modal>
+        </gov-popups>
 
         {/* popup for registration */}
-        <gov-modal
-          ref={registrationDialogRef}
-          id="RegistrationDialog"
-          header="Register"
-          subheader="Complete the form below to create your 1Gov account."
-          size="large"
-          is-open={isRegistrationOpen}
-          backdrop-close="true"
-          disable-close="false"
-          close-on-esc="true"
-          show-footer="false"
-        >
+        <gov-popups ref={registrationDialogRef} id="RegistrationDialog" header="Register" subheader="Complete the form below to create your 1Gov account." cancel-button-text="Cancel" confirm-button-text="Confirm" show-cancel-button="false" show-confirm-button="false" backdrop-close="true" disable-close="false">
           <div style={{ padding: "0px 20px" }}>
-            <gov-tabs 
+            <gov-tabs
               tab-list='["Citizen","Non-citizen"]'
               active-tab="Citizen"
-              body-styles='{"border":"none"}'
-              styles={{border:"none"}}
+              body-styles='{"border":"none","box-shadow": "none"}'
+              styles='{ "border": "none" }'
               header-styles='{"border":"none","border-radius":"0px"}'
-              active-button-styles={{color:"black", border:"none"}}
+              active-button-styles='{ "color": "white", "border": "none" }'
               inactive-button-styles='{"color":"gray","border":"none"}'
-              >
+            >
               <div slot="Citizen">
                 <gov-form
                   header=""
@@ -450,6 +411,7 @@ export default function Home() {
                   submit-btn-text="Register"
                   hide-cancel-btn="true"
                   variant="success"
+                  styles='{"border":"none","box-shadow": "none"}'
                 >
                   <gov-input
                     label="National ID No."
@@ -460,7 +422,7 @@ export default function Home() {
                     required="true"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-input
                     label="ID Expiry Date"
                     type="date"
@@ -470,7 +432,7 @@ export default function Home() {
                     required="true"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-input
                     label="First Name"
                     type="text"
@@ -479,7 +441,7 @@ export default function Home() {
                     required="true"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-input
                     label="Middle Name"
                     type="text"
@@ -488,7 +450,7 @@ export default function Home() {
                     required="false"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-input
                     label="Surname"
                     type="text"
@@ -497,7 +459,7 @@ export default function Home() {
                     required="true"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-input
                     label="Phone Number"
                     type="tel"
@@ -508,7 +470,7 @@ export default function Home() {
                     required="true"
                     error-message="Phone number must start with 267 and be 11 digits long (e.g., 26777380956)"
                     required-error-message="This field is required"
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-checkbox
                     label="I agree to the terms and conditions"
                     required="true"
@@ -516,7 +478,7 @@ export default function Home() {
                 </gov-form>
               </div>
               <div slot="Non-citizen">
-              <gov-form
+                <gov-form
                   header=""
                   url=""
                   method="POST"
@@ -534,7 +496,7 @@ export default function Home() {
                     required="true"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-input
                     label="ID Expiry Date"
                     type="date"
@@ -544,7 +506,7 @@ export default function Home() {
                     required="true"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-upload id="uploadComponent" name="documents" label="Upload Documents" allowedfiletypes="[&quot;pdf&quot;, &quot;png&quot;, &quot;jpeg&quot;]" required=""></gov-upload>
 
                   <gov-input
@@ -555,7 +517,7 @@ export default function Home() {
                     required="true"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-input
                     label="Middle Name"
                     type="text"
@@ -564,7 +526,7 @@ export default function Home() {
                     required="false"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-input
                     label="Surname"
                     type="text"
@@ -573,18 +535,20 @@ export default function Home() {
                     required="true"
                     error-message="Invalid input"
                     required-error-message="This field is required"
-                  ></gov-input>
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  ></gov-input>
                   <gov-input
                     label="Phone Number"
                     type="tel"
                     placeholder="Enter your phone number"
-                    is-valid="true">
-                    </gov-input>
-                    </gov-form>
-                    </div>
-         </gov-tabs>
+                    is-valid="true"
+                    styles='{ "padding": "8px", "borderRadius": "10px", "width": "100%" }'                  >
+                  </gov-input>
+                </gov-form>
+              </div>
+            </gov-tabs>
           </div>
-        </gov-modal>
+        </gov-popups>
+
       </gov-box>
     </div>
   );
