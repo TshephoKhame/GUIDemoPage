@@ -11,7 +11,7 @@ export function LoginButton({ onClick }){
     className="mt-20 mb-8"
   >
     <gov-button
-      onClick={onClick}
+      clicked={onClick}
       type-variant="button"
       size="md"
       variant="success"
