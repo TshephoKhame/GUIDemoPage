@@ -221,18 +221,22 @@ export default function Home() {
         </gov-row>
 
         {/* model for loging */}
-        <gov-popups ref={loginDialogRef} id="LoginDialog" header="Login" subheader="Complete the form below to access your account." cancel-button-text="Cancel" confirm-button-text="Confirm" show-cancel-button="false" show-confirm-button="false" backdrop-close="true" disable-close="false">
+        <gov-popups ref={loginDialogRef} id="LoginDialog" styles='{"width":"570px","border-radius":"15px"}' header="Login" subheader="Complete the form below to access your account." cancel-button-text="Cancel" confirm-button-text="Confirm" show-cancel-button="false" show-confirm-button="false" backdrop-close="true" disable-close="false">
           <div style={{ padding: "0px 20px", border: "none" }}>
+            <hr style={{borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px"}}></hr>
+            <span className="h6" style={{fontWeight:"700"}}>Choose Login Options</span>
             <gov-tabs
               tab-list='["1GovID","Phone","Email"]'
               active-tab="1GovID"
-              body-styles='{"border":"none","box-shadow": "none","border-right":"none"}'
+              body-styles='{"border":"none","box-shadow": "none","border-right":"none","padding":"20px 0px"}'
               styles='{ "border": "none" }'
-              header-styles='{"border":"none","border-radius":"0px","border-right":"none"}'
-              active-button-styles='{ "color": "black", "border": "none" }'
-              inactive-button-styles='{"color":"gray","border":"none"}'
+              header-styles='{"align-items": "center","height":"60px","border":"none","border-radius":"0px","border-right":"none"}'
+              active-button-styles='{ "color": "white", "border": "none","height":"40px" }'
+              inactive-button-styles='{"color":"gray","border":"none","height":"40px"}'
             >
               <div slot="1GovID">
+              <hr style={{borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px"}}></hr>
+
                 <div style={{ padding: "30px" }}>
                   <gov-input
                     label="1Gov ID"

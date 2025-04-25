@@ -92,7 +92,8 @@ export default function InventoryDashboard() {
                     </h3>
                     <p style={{ fontSize: "0.875rem", color: "#6b7280", marginBottom: "1rem" }}>
                       Breakdown by category
-                    </p>                     
+                    </p>     
+                    <gov-row justify="space-around">                
                     <gov-chart
                       type="pie"
                       data='{
@@ -112,14 +113,36 @@ export default function InventoryDashboard() {
                           }
                         }
                       }'
-                      style={{ height: "100%", width: "100%" }}
+                      style={{ height: "100%", width: "45%" }}
                     />
+                     <gov-chart
+                      type="bar"
+                      data='{
+                        "labels":["In Stock","Low Stock","Out of Stock"],
+                        "datasets":[{
+                          "label":"Inventory",
+                          "backgroundColor":["#4ade80","#facc15","#f87171"],
+                          "data":[1240,96,24]
+                        }]
+                      }'
+                              options='{
+                        "responsive": true,
+                        "maintainAspectRatio": false,
+                        "plugins": {
+                          "legend": {
+                            "position": "bottom"
+                          }
+                        }
+                      }'
+                      style={{ height: "100%", width: "45%" }}
+                    />
+                    </gov-row>
                 </gov-card>               
               </gov-box>
 
               {/* Filters and Settings */}
               <gov-box size="12" lg="12" md="12" sm="12" gap="20px" className="d-flex flex-wrap mt-20">
-                  <gov-box size="8" lg="8" md="8" sm="12" styles={{ gap:"20px"}}>
+                  <gov-box size="8" lg="8" md="12" sm="12" styles={{ gap:"20px"}}>
                     {/* Real-Time Settings */}
                     <gov-card show-button="false" className='border bw-1 border-radius-lg shadow w-100'>
                       <div style={{ padding: "1rem" }}>
@@ -141,7 +164,7 @@ export default function InventoryDashboard() {
                       </div>
                     </gov-card>
                   </gov-box>
-                  <gov-box size="3" lg="3" md="3" sm="12" >
+                  <gov-box size="3" lg="3" md="12" sm="12" >
                     {/* Inventory Filters */}
                     <gov-card show-button="false" className='border bw-1 border-radius-lg shadow w-100'>
                       <div style={{ padding: "1rem" }}>
