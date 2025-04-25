@@ -135,7 +135,7 @@ export default function ServiceCatagories() {
               onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
               onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
               show-button='false'
-              style={{cursor: 'pointer' , overflow: 'hidden', minWidth:'250px'}}
+              style={{cursor: 'pointer' ,minWidth:'303px'}}
               className='border bw-1 border-radius-lg shadow d-flex align-center'
               key={index}>
               <gov-row styles={{minWidth:'250px'}}>

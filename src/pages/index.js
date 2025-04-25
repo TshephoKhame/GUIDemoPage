@@ -3,21 +3,56 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 
-export function LoginButton({ onClick }){
+export function LoginButton(){
+  const router = useRouter();
+
+  function loginToDashboard()  {
+    console.log("login");
+    router.push("/dashboard");
+  };
+
   return(
     <gov-row
     align="center"
     justify="center"
     className="mt-20 mb-8"
   >
+    <div onClick={loginToDashboard}>
     <gov-button
-      clicked={onClick}
       type-variant="button"
       size="md"
       variant="success"
       label="login"
       styles='{"padding":"20px 60px"}'
     ></gov-button>
+    </div>
+  </gov-row>
+  );
+} 
+
+export function RegisterButton(){
+  const router = useRouter();
+
+  function registerToDashboard()  {
+    console.log("login");
+    router.push("/dashboard");
+  };
+
+  return(
+    <gov-row
+    align="center"
+    justify="center"
+    className="mt-20 mb-8"
+  >
+    <div onClick={registerToDashboard}>
+    <gov-button
+      type-variant="button"
+      size="md"
+      variant="success"
+      label="login"
+      styles='{"padding":"20px 60px"}'
+    ></gov-button>
+    </div>
   </gov-row>
   );
 } 
@@ -26,7 +61,6 @@ export default function Home() {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const loginDialogRef = useRef(null);
   const registrationDialogRef = useRef(null);
-  const router = useRouter();
 
   useEffect(() => {
   }, []);
@@ -42,13 +76,6 @@ export default function Home() {
       registrationDialogRef.current.openModal();
     }
   };
-
-  function loginToDashboard()  {
-    console.log("login");
-    router.push("/dashboard");
-  };
- 
-
   return (
     <div
 
@@ -295,7 +322,7 @@ export default function Home() {
                     </p>
                   </gov-row>
 
-                  <LoginButton onClick={loginToDashboard}/>
+                  <LoginButton />
                 </div>
               </div>
               <div slot="Phone">
@@ -336,7 +363,7 @@ export default function Home() {
                     </p>
                   </gov-row>
 
-                  <LoginButton onClick={loginToDashboard} />
+                  <LoginButton />
                 </div>
               </div>
               <div slot="Email">
@@ -377,7 +404,7 @@ export default function Home() {
                     </p>
                   </gov-row>
 
-                  <LoginButton onClick={loginToDashboard}/>
+                  <LoginButton/>
                 </div>
               </div>
             </gov-tabs>
