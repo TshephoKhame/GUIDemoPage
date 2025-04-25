@@ -93,7 +93,7 @@ export default function InventoryDashboard() {
                     <p style={{ fontSize: "0.875rem", color: "#6b7280", marginBottom: "1rem" }}>
                       Breakdown by category
                     </p>     
-                    <gov-row justify="space-around">                
+                    <gov-box classes="d-flex flex-wrap" gap="20px" justify="space-around">                
                     <gov-chart
                       type="pie"
                       data='{
@@ -113,7 +113,7 @@ export default function InventoryDashboard() {
                           }
                         }
                       }'
-                      style={{ height: "100%", width: "45%" }}
+                      style={{ height: "100%", width: "48%" ,minWidth: "450px" }}
                     />
                      <gov-chart
                       type="bar"
@@ -134,9 +134,9 @@ export default function InventoryDashboard() {
                           }
                         }
                       }'
-                      style={{ height: "100%", width: "45%" }}
+                      style={{ height: "100%", width: "48%" ,minWidth: "450px" }}
                     />
-                    </gov-row>
+                    </gov-box>
                 </gov-card>               
               </gov-box>
 

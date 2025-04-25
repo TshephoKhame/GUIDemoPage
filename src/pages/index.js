@@ -2,6 +2,26 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+
+export function LoginButton({ onClick }){
+  return(
+    <gov-row
+    align="center"
+    justify="center"
+    className="mt-20 mb-8"
+  >
+    <gov-button
+      onClick={onClick}
+      type-variant="button"
+      size="md"
+      variant="success"
+      label="login"
+      styles='{"padding":"20px 60px"}'
+    ></gov-button>
+  </gov-row>
+  );
+} 
+
 export default function Home() {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const loginDialogRef = useRef(null);
@@ -23,10 +43,11 @@ export default function Home() {
     }
   };
 
-  const login = () => {
+  function loginToDashboard()  {
     console.log("login");
     router.push("/dashboard");
   };
+ 
 
   return (
     <div
@@ -223,21 +244,21 @@ export default function Home() {
         {/* model for loging */}
         <gov-popups ref={loginDialogRef} id="LoginDialog" styles='{"width":"570px","border-radius":"15px"}' header="Login" subheader="Complete the form below to access your account." cancel-button-text="Cancel" confirm-button-text="Confirm" show-cancel-button="false" show-confirm-button="false" backdrop-close="true" disable-close="false">
           <div style={{ padding: "0px 20px", border: "none" }}>
-            <hr style={{borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px"}}></hr>
-            <span className="h6" style={{fontWeight:"700"}}>Choose Login Options</span>
+            <hr style={{ borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px" }}></hr>
+            <span className="h6" style={{ fontWeight: "700" }}>Choose Login Options</span>
             <gov-tabs
               tab-list='["1GovID","Phone","Email"]'
               active-tab="1GovID"
               body-styles='{"border":"none","box-shadow": "none","border-right":"none","padding":"20px 0px"}'
               styles='{ "border": "none" }'
-              header-styles='{"align-items": "center","height":"60px","border":"none","border-radius":"0px","border-right":"none"}'
-              active-button-styles='{ "color": "white", "border": "none","height":"40px" }'
-              inactive-button-styles='{"color":"gray","border":"none","height":"40px"}'
+              header-styles='{"align-items": "center","height":"55px","border":"none","border-radius":"0px","border-right":"none","marginTop":"10px"}'
+              active-button-styles='{ "color": "white", "border": "none","height":"35px" }'
+              inactive-button-styles='{"color":"gray","border":"none","height":"35px"}'
             >
               <div slot="1GovID">
-              <hr style={{borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px"}}></hr>
+                <hr style={{ borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px" }}></hr>
 
-                <div style={{ padding: "30px" }}>
+                <div style={{ padding: "10px 30px 80px" }}>
                   <gov-input
                     label="1Gov ID"
                     type="text"
@@ -273,22 +294,12 @@ export default function Home() {
                       Recover account
                     </p>
                   </gov-row>
-                  <gov-row
-                    align="center"
-                    justify="center"
-                    className="mt-20 mb-8"
-                  >
-                    <gov-button
-                      onClick={login}
-                      label="Login"
-                      size="lg"
-                      variant="success"
-                    ></gov-button>
-                  </gov-row>
+
+                  <LoginButton onClick={loginToDashboard}/>
                 </div>
               </div>
               <div slot="Phone">
-                <div style={{ padding: "30px" }}>
+                <div style={{ padding: "10px 30px 80px" }}>
                   <gov-input
                     label="Phone Number"
                     type="tel"
@@ -324,22 +335,12 @@ export default function Home() {
                       Recover account
                     </p>
                   </gov-row>
-                  <gov-row
-                    align="center"
-                    justify="center"
-                    className="mt-20 mb-8"
-                  >
-                    <gov-button
-                      onClick={login}
-                      label="Login"
-                      size="lg"
-                      variant="success"
-                    ></gov-button>
-                  </gov-row>
+
+                  <LoginButton onClick={loginToDashboard} />
                 </div>
               </div>
               <div slot="Email">
-                <div style={{ padding: "30px" }}>
+                <div style={{ padding: "10px 30px 80px"  }}>
                   <gov-input
                     label="Email"
                     type="email"
@@ -375,19 +376,8 @@ export default function Home() {
                       Recover account
                     </p>
                   </gov-row>
-                  <gov-row
-                    align="center"
-                    justify="center"
-                    className="mt-20 mb-8"
-                  >
-                    <gov-button
-                      onClick={login}
 
-                      label="Login"
-                      size="lg"
-                      variant="success"
-                    ></gov-button>
-                  </gov-row>
+                  <LoginButton onClick={loginToDashboard}/>
                 </div>
               </div>
             </gov-tabs>
@@ -395,16 +385,16 @@ export default function Home() {
         </gov-popups>
 
         {/* popup for registration */}
-        <gov-popups ref={registrationDialogRef} id="RegistrationDialog" header="Register" subheader="Complete the form below to create your 1Gov account." cancel-button-text="Cancel" confirm-button-text="Confirm" show-cancel-button="false" show-confirm-button="false" backdrop-close="true" disable-close="false">
+        <gov-popups ref={registrationDialogRef} id="RegistrationDialog" styles='{"width":"600px","border-radius":"15px"}' header="Register" subheader="Complete the form below to create your 1Gov account." cancel-button-text="Cancel" confirm-button-text="Confirm" show-cancel-button="false" show-confirm-button="false" backdrop-close="true" disable-close="false">
           <div style={{ padding: "0px 20px" }}>
             <gov-tabs
               tab-list='["Citizen","Non-citizen"]'
               active-tab="Citizen"
-              body-styles='{"border":"none","box-shadow": "none"}'
+              body-styles='{"border":"none","box-shadow": "none","border-right":"none","padding":"20px 0px"}'
               styles='{ "border": "none" }'
-              header-styles='{"border":"none","border-radius":"0px"}'
-              active-button-styles='{ "color": "white", "border": "none" }'
-              inactive-button-styles='{"color":"gray","border":"none"}'
+              header-styles='{"align-items": "center","height":"55px","border":"none","border-radius":"0px","border-right":"none","marginTop":"10px"}'
+              active-button-styles='{ "color": "white", "border": "none","height":"35px" }'
+              inactive-button-styles='{"color":"gray","border":"none","height":"35px"}'
             >
               <div slot="Citizen">
                 <gov-form
