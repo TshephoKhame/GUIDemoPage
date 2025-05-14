@@ -41,9 +41,9 @@ export default function InventoryDashboard() {
             <h2 style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#1f2937", marginBottom: "1.5rem" }}>Inventory Overview</h2>
             
             {/* Inventory Overview Cards */}
-            <div className="d-flex flex-wrap" style={{ justifyContent: "space-between" }}>
+            <div className="d-flex flex-wrap " style={{ justifyContent: "space-between", gap: "20px" }}>
 
-              <gov-box  md="12" sm="12" styles={{ overflow: "hidden", width: "30%" }}>
+              <gov-box  size="3" lg="3"  md="12" sm="12" styles='{ "min-width": "303px"}'>
                 <gov-card show-button="false" className='border bw-1 border-radius-lg shadow w-100'>
                   <div style={{ padding: "1rem" }}>
                   <h5 className="fw-bold" style={{}}>Items in Stock</h5>
@@ -53,7 +53,7 @@ export default function InventoryDashboard() {
                 </gov-card>
               </gov-box>
 
-              <gov-box   md="12" sm="12" styles={{ overflow: "hidden" , width: "30%" }}>
+              <gov-box  size="3" lg="3"   md="12" sm="12" styles='{ "min-width": "303px" }'>
                 <gov-card show-button="false" className='border bw-1 border-radius-lg shadow w-100'>
                   <div style={{ padding: "1rem" }}>
                     <h5 className="fw-bold" style={{}}>Low Stock</h5>
@@ -63,7 +63,7 @@ export default function InventoryDashboard() {
                 </gov-card>
               </gov-box>
 
-              <gov-box  md="12" sm="12" styles={{ overflow: "hidden", width: "30%"  }}>
+              <gov-box  size="3" lg="3"  md="12" sm="12" styles='{  "min-width": "303px"}'>
                 <gov-card show-button="false" className='border bw-1 border-radius-lg shadow w-100'>
                   <div style={{ padding: "1rem" }}>
                   <h5 className="fw-bold" style={{}}>Out of Stock</h5>
