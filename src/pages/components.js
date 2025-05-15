@@ -40,15 +40,15 @@ export default function Components() {
           <gov-box>
             <gov-stepper
               variant="horizontal"
-              validateStep="async t=>(console.log(`Validating step ${t}`),!0)"
+              validate-step="async t=>(console.log(`Validating step ${t}`),!0)"
               onSubmit="async()=>{console.log('Form submitted')}"
               next-text="Next"
               prev-text="Previous"
               submit-text="Submit"
               reset-on-submit="true"
               max-steps-visible="5"
-              styles={{"borderRadius": "25px"}}
-              buttonStyles={{ "borderRadius": "30px", "width": "100px"}}
+              styles='{ "borderRadius": "25px" }'
+              button-styles='{ "borderRadius": "30px", "width": "100px"}'
             >
               <div slot="step-0">
                 <div className="">
@@ -135,7 +135,7 @@ export default function Components() {
                     <gov-badge variant="secondary">Secondary</gov-badge>
                     <gov-badge variant="primary">Primary</gov-badge>
 
-                     <h2 className="text-xl font-semibold mb-25">Large</h2>
+                     <h2 className="text-xl font-semibold mb-15 mt-25">Large</h2>
                     <gov-badge size="lg" variant="success">Success</gov-badge>
                     <gov-badge size="lg" variant="warning">Warning</gov-badge>
                     <gov-badge size="lg" variant="danger">Danger</gov-badge>

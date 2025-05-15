@@ -123,11 +123,15 @@ export default function ServiceCatagories() {
           <span className='h5 fw-bold'>228</span> <span className='h6'>services available</span>
         </div>
 
-        <gov-row gap="20px"styles={{
-          padding: '0px 20px',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-        }}>
+        <gov-row gap="20px" 
+        styles='{
+         "padding": "0px 0px 0px 20px",
+          "display": "grid",
+          "gidTemplateColumns": "repeat(auto-fill, minmax(300px, 1fr))"
+        }'
+
+
+        >
           {serviceCategories.map((service, index) => (
             <div
               // onclick={openModal}
