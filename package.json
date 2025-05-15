@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "export": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "gov-gui": "^0.2.6",
+    "gov-gui": "^0.3.0",
     "next": "15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

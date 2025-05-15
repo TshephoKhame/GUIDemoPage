@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function  () {
+export default function ApplicationsPage () {
   const [activeTab, setActiveTab] = useState('Submitted');
   
  //Service Code Array
@@ -101,7 +101,7 @@ export default function  () {
       tab-list='["Submitted","Drafts"]' 
       active-tab="Submitted"
       tab-variant="no-background" 
-      body-styles='{"border":"none"}'
+      body-styles='{"border":"none","box-shadow": "none"}'
       styles='{"border": "none"}'
       header-styles='{"border":"none","width":"220px","border-radius":"0px"}'
       active-button-styles='{"color":"black","border":"none"}'
@@ -200,6 +200,7 @@ export default function  () {
               justifyContent: "space-between",
               border: "1px solid #e0e0e0",
               padding: "20px 15px",
+              minWidth: "780px",
             }}
           >
             {/* Left Side */}
@@ -266,7 +267,7 @@ export default function  () {
               </div>
               <div style={{ width: "200px",  minWidth: "200px", textAlign: "left" }}>
                 <div
-                  className="secondary-bg info-text h6 w-40 fw-bold"
+                  className="secondary-bg info-text h6 w-40 "
                   style={{
                     padding: "5px 15px",
                     borderRadius: "12px",
