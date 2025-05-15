@@ -370,6 +370,7 @@ export default function Home() {
 
                   <LoginButton />
                 </div>
+                
               </div>
               <div slot="Email">
                 <div style={{ padding: "10px 30px 80px"  }}>
