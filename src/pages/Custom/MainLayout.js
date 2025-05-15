@@ -34,9 +34,9 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
           style={{
             position: "fixed",
             top: "10px",
-            right: "-50px",
+            right: "15px",
             zIndex: 1000000,
-            width: "400px",
+            width: "320px",
           }}
           header= {toasterHeader}
           label={toasterText}

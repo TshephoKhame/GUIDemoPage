@@ -65,7 +65,7 @@ export default function ServiceCatagories() {
   return (
     <gov-box>
       <div style={{
-        padding: '0px 20px 20px 0px',
+        padding: '0px 0px 20px 0px',
         borderRadius: '8px'
       }}>
         <gov-box className="primary-bg border-radius-lg mb-10" style={{
@@ -123,22 +123,22 @@ export default function ServiceCatagories() {
           <span className='h5 fw-bold'>228</span> <span className='h6'>services available</span>
         </div>
 
-        <div style={{
+        <gov-row gap="20px"styles={{
+          padding: '0px 20px',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
-          gap: '20px'
+          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
         }}>
           {serviceCategories.map((service, index) => (
-            <gov-card
+            <div
               // onclick={openModal}
               onClick={openPopup}
               onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
               onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
               show-button='false'
-              style={{cursor: 'pointer' ,minWidth:'303px'}}
+              style={{cursor: 'pointer' ,minWidth:'313px', maxWidth:'313px',}}
               className='border bw-1 border-radius-lg shadow d-flex align-center'
               key={index}>
-              <gov-row styles={{minWidth:'250px'}}>
+              <div style={{minWidth:'250px',padding:"0px 5px"}} className='d-flex flex-nowrap'>
                 <img
                   src={service.icon}
                   alt={service.title}
@@ -172,10 +172,10 @@ export default function ServiceCatagories() {
                     {service.serviceCount} Services
                   </div>
                 </gov-box>
-              </gov-row>
-            </gov-card>
+              </div>
+            </div>
           ))}
-        </div>
+        </gov-row>
       </div>
 
       {/* Popup */}
