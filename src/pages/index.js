@@ -114,7 +114,7 @@ export default function Home() {
         classes=""
       >
         {/* Top area*/}
-        <div style={{ height: "55vh" }}>
+        <div style={{ height: "60vh" }}>
           {/*coat of arms row */}
           <gov-row
             align="start"
@@ -154,7 +154,7 @@ export default function Home() {
             classes=""
           ></gov-row>
         </div>
-        <div style={{ padding: "50px" }}>
+        <div style={{ padding: "50px" ,alignContent: "end"  }}>
           {/* footer */}
           <div align="bottom" style={{ display: 'flex',
     flexFlow: 'nowrap',

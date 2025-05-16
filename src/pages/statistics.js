@@ -21,7 +21,7 @@ export default function InventoryDashboard() {
           </div>
 
           {/* Date Range Filter */}
-          <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" }}>
+          <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end" , flexFlow:"wrap" }}>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <label style={{ fontSize: "0.875rem", marginBottom: "0.25rem", color: "#374151" }}>From</label>
               <gov-date-time-picker />
