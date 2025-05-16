@@ -145,133 +145,133 @@ export default function Home() {
             classes=""
           ></gov-row>
         </div>
+        <div style={{ padding: "50px" }}>
+          {/* footer */}
+          <gov-row align="bottom">
+            {/* left side of footer */}
+            <gov-box
+              size="6"
+              align="start"
+              justify="end"
+              is-flex-box="true"
+              classes=""
+              style={{ flexDirection: "column" }}
+            >
+              {/* Renders play button */}
+              <div className="playstore-button-image" style={{}}></div>
 
-        {/* footer */}
-        <gov-row align="bottom" styles='{"padding":"20px"}' >
-          {/* left side of footer */}
-          <gov-box
-            size="6"
-            align="start"
-            justify="end"
-            is-flex-box="true"
-            classes=""
-            style={{ flexDirection: "column" }}
-          >
-            {/* Renders play button */}
-            <div className="playstore-button-image" style={{}}></div>
+              {/* Contact buttons */}
+              <div className="contact-container border-radius-lg" style={{}}>
+                <div className="govlogo"></div>
+                <gov-box is-flex-box="true" align="center">
+                  {" "}
+                  {/* align="center" */}
+                  <gov-box size="4" align="start">
+                    <p className="white-text smaller-caption mb-5 mt-0">
+                      Contact Us
+                    </p>
+                    <gov-row gap="15px" align="center" justify="start">
+                      <gov-tooltip
+                        text="e-support@gov.bw"
+                        position="bottom"
+                        color="black"
+                      >
+                        <gov-icon
+                          name="envelope"
+                          size="md"
+                          variant="white"
+                        ></gov-icon>
+                      </gov-tooltip>
+                      <gov-tooltip
+                        text="+26773996013"
+                        position="bottom"
+                        color="black"
+                      >
+                        <gov-icon
+                          name="phone"
+                          size="md"
+                          variant="white"
+                        ></gov-icon>
+                      </gov-tooltip>
+                    </gov-row>
+                  </gov-box>
+                  <div className="border bw-2 border-white border-radius-lg vertical-divider"></div>
+                  <gov-box style={{ marginLeft: "12px" }} size="7" align="start">
+                    <p className="white-text smaller-caption mb-5 mt-0">Social</p>
+                    <gov-row gap="15px" align="center" justify="start">
+                      <gov-tooltip
+                        text="https://www.facebook.com/BotswanaGovernment/"
+                        position="bottom"
+                        color="light"
+                      >
+                        <gov-icon
+                          name="facebook"
+                          size="md"
+                          variant="white"
+                        ></gov-icon>
+                      </gov-tooltip>
 
-            {/* Contact buttons */}
-            <div className="contact-container border-radius-lg" style={{}}>
-              <div className="govlogo"></div>
-              <gov-box is-flex-box="true" align="center">
-                {" "}
-                {/* align="center" */}
-                <gov-box size="4" align="start">
-                  <p className="white-text smaller-caption mb-5 mt-0">
-                    Contact Us
-                  </p>
-                  <gov-row gap="15px" align="center" justify="start">
-                    <gov-tooltip
-                      text="e-support@gov.bw"
-                      position="bottom"
-                      color="black"
-                    >
-                      <gov-icon
-                        name="envelope"
-                        size="md"
-                        variant="white"
-                      ></gov-icon>
-                    </gov-tooltip>
-                    <gov-tooltip
-                      text="+26773996013"
-                      position="bottom"
-                      color="black"
-                    >
-                      <gov-icon
-                        name="phone"
-                        size="md"
-                        variant="white"
-                      ></gov-icon>
-                    </gov-tooltip>
-                  </gov-row>
+                      <gov-tooltip
+                        text="https://x.com/BWGovernment"
+                        position="bottom"
+                        color="light"
+                      >
+                        <gov-icon name="X" size="md" variant="white"></gov-icon>
+                      </gov-tooltip>
+                      <gov-tooltip
+                        text="https://www.instagram.com/bwgov/"
+                        position="bottom"
+
+                        color="light"
+                      >
+                        <gov-icon
+                          name="instagram"
+                          size="md"
+                          variant="white"
+                        ></gov-icon>
+                      </gov-tooltip>
+                    </gov-row>
+                  </gov-box>
                 </gov-box>
-                <div className="border bw-2 border-white border-radius-lg vertical-divider"></div>
-                <gov-box style={{ marginLeft: "12px" }} size="7" align="start">
-                  <p className="white-text smaller-caption mb-5 mt-0">Social</p>
-                  <gov-row gap="15px" align="center" justify="start">
-                    <gov-tooltip
-                      text="https://www.facebook.com/BotswanaGovernment/"
-                      position="bottom"
-                      color="light"
-                    >
-                      <gov-icon
-                        name="facebook"
-                        size="md"
-                        variant="white"
-                      ></gov-icon>
-                    </gov-tooltip>
+              </div>
 
-                    <gov-tooltip
-                      text="https://x.com/BWGovernment"
-                      position="bottom"
-                      color="light"
-                    >
-                      <gov-icon name="X" size="md" variant="white"></gov-icon>
-                    </gov-tooltip>
-                    <gov-tooltip
-                      text="https://www.instagram.com/bwgov/"
-                      position="bottom"
-
-                      color="light"
-                    >
-                      <gov-icon
-                        name="instagram"
-                        size="md"
-                        variant="white"
-                      ></gov-icon>
-                    </gov-tooltip>
-                  </gov-row>
-                </gov-box>
-              </gov-box>
-            </div>
-
-            {/* app version */}
-            <div className="white-text smaller-caption" style={{}}>
-              © 2025 1Gov1Citizen Portal v30.5
-            </div>
-          </gov-box>
+              {/* app version */}
+              <div className="white-text smaller-caption" style={{}}>
+                © 2025 1Gov1Citizen Portal v30.5
+              </div>
+            </gov-box>
 
 
 
-          {/* Login and Registration Buttons */}
-          <gov-box
-            size="6"
-            align="end"
-            justify="end"
-            gap="15px"
-            is-flex-box="true"
-            classes=""
-          >
-            <gov-button
-              onClick={handleLoginClick}
-              type-variant="button"
-              size="xxl"
-              variant="white"
-              label="Login"
-              styles='{"padding":"20px 60px"}'
-            ></gov-button>
-            <gov-button
-              onClick={handleRegistrationClick}
-              type-variant="button"
-              size="xxl"
-              variant="black"
-              label="Register"
-              styles='{"padding":"20px 60px"}'
-            ></gov-button>
-          </gov-box>
+            {/* Login and Registration Buttons */}
+            <gov-box
+              size="6"
+              align="end"
+              justify="end"
+              gap="15px"
+              is-flex-box="true"
+              classes=""
+            >
+              <gov-button
+                onClick={handleLoginClick}
+                type-variant="button"
+                size="xxl"
+                variant="white"
+                label="Login"
+                styles='{"padding":"20px 60px"}'
+              ></gov-button>
+              <gov-button
+                onClick={handleRegistrationClick}
+                type-variant="button"
+                size="xxl"
+                variant="black"
+                label="Register"
+                styles='{"padding":"20px 60px"}'
+              ></gov-button>
+            </gov-box>
 
-        </gov-row>
-
+          </gov-row>
+        </div>
         {/* model for loging */}
         <gov-popups ref={loginDialogRef} id="LoginDialog" styles='{"width":"570px","border-radius":"15px"}' header="Login" subheader="Complete the form below to access your account." cancel-button-text="Cancel" confirm-button-text="Confirm" show-cancel-button="false" show-confirm-button="false" backdrop-close="true" disable-close="false">
           <div style={{ padding: "0px 20px", border: "none" }}>
@@ -326,8 +326,8 @@ export default function Home() {
                     </p>
                   </gov-row>
                   <gov-row align="end" justify="end">
-              <gov-button type="submit" size="sm" variant="success" label="Login" onClick={gotToDashboard} styles='{ "padding": "15px", "borderRadius": "10px", "width": "100%" }' />
-            </gov-row>
+                    <gov-button type="submit" size="sm" variant="success" label="Login" onClick={gotToDashboard} styles='{ "padding": "15px", "borderRadius": "10px", "width": "100%" }' />
+                  </gov-row>
                 </div>
               </div>
               <div slot="Phone">
@@ -424,7 +424,7 @@ export default function Home() {
                 </div>
               </div>
             </gov-tabs>
-            
+
           </div>
         </gov-popups>
 
