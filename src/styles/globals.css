@@ -53,13 +53,12 @@ body {
 .coat-of-arms-container {
   background-image: url('../assets/coat_of_arms.png');
   background-color: var(--kcWhiteColor);
-  border-radius: 25px 25px 25px 25px;
+  border-radius: 0px 0px 25px 25px;
   width: 350px; 
   height: 250px; 
   background-size: contain; /* This will scale the image to fit */
   background-repeat: no-repeat;
-  background-position: center;
-  margin-top: 40px; /* Added to push the coat of arms lower */
+  background-position: center; 
   margin-bottom: 30px; /* Increased spacing between coat of arms and title */
 }
 
