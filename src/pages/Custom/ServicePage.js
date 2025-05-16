@@ -124,7 +124,7 @@ export default function ServiceCatagories() {
         </div>
 
         <gov-row gap="20px" 
-        styles='{"padding": "0px 0px 0px 20px","display": "grid","gidTemplateColumns": "repeat(auto-fill, minmax(300px, 1fr))"}'
+        styles='{"padding": "0px 0px 0px 20px","gidTemplateColumns": "repeat(auto-fill, minmax(300px, 1fr))"}'
 
 
         >

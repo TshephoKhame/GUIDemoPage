@@ -95,6 +95,7 @@ export default function Home() {
   };
 
 
+
   return (
     <div
 
@@ -113,7 +114,7 @@ export default function Home() {
         classes=""
       >
         {/* Top area*/}
-        <div style={{ height: "60vh" }}>
+        <div style={{ height: "55vh" }}>
           {/*coat of arms row */}
           <gov-row
             align="start"
@@ -153,144 +154,138 @@ export default function Home() {
             classes=""
           ></gov-row>
         </div>
+        <div style={{ padding: "50px" }}>
+          {/* footer */}
+          <div align="bottom" style={{ display: 'flex',
+    flexFlow: 'nowrap',
+    gap: '0px',
+    justifyContent: 'start'}}>
+            {/* left side of footer */}
+            <gov-box
+              size="6"
+              align="start"
+              justify="end"
+              is-flex-box="true"
+              classes=""
+              style={{ flexDirection: "column" }}
+            >
+              {/* Renders play button */}
+              <div className="playstore-button-image" style={{}}></div>
 
-        {/* footer */}
-        <gov-row
-          align="between"
-          justify="start"
-          gap="10px"
-          reverse="false"
-          classes=""
-          style={{ height: "40vh", padding: "40px" }}
-        >
-          {/* left side of footer */}
-          <gov-box
-            size="6"
-            align="start"
-            justify="end"
-            is-flex-box="true"
-            classes=""
-            style={{ flexDirection: "column" }}
-          >
-            {/* Renders play button */}
-            <div className="playstore-button-image" style={{}}></div>
+              {/* Contact buttons */}
+              <div className="contact-container border-radius-lg" style={{}}>
+                <div className="govlogo"></div>
+                <gov-box is-flex-box="true" align="center">
+                  {" "}
+                  {/* align="center" */}
+                  <gov-box size="4" align="start">
+                    <p className="white-text smaller-caption mb-5 mt-0">
+                      Contact Us
+                    </p>
+                    <gov-row gap="15px" align="center" justify="start">
+                      <gov-tooltip
+                        text="e-support@gov.bw"
+                        position="bottom"
+                        color="black"
+                      >
+                        <gov-icon
+                          name="envelope"
+                          size="md"
+                          variant="white"
+                        ></gov-icon>
+                      </gov-tooltip>
+                      <gov-tooltip
+                        text="+26773996013"
+                        position="bottom"
+                        color="black"
+                      >
+                        <gov-icon
+                          name="phone"
+                          size="md"
+                          variant="white"
+                        ></gov-icon>
+                      </gov-tooltip>
+                    </gov-row>
+                  </gov-box>
+                  <div className="border bw-2 border-white border-radius-lg vertical-divider"></div>
+                  <gov-box style={{ marginLeft: "12px" }} size="7" align="start">
+                    <p className="white-text smaller-caption mb-5 mt-0">Social</p>
+                    <gov-row gap="15px" align="center" justify="start">
+                      <gov-tooltip
+                        text="https://www.facebook.com/BotswanaGovernment/"
+                        position="bottom"
+                        color="light"
+                      >
+                        <gov-icon
+                          name="facebook"
+                          size="md"
+                          variant="white"
+                        ></gov-icon>
+                      </gov-tooltip>
 
-            {/* Contact buttons */}
-            <div className="contact-container border-radius-lg" style={{}}>
-              <div className="govlogo"></div>
-              <gov-box is-flex-box="true" align="center">
-                {" "}
-                {/* align="center" */}
-                <gov-box size="4" align="start">
-                  <p className="white-text smaller-caption mb-5 mt-0">
-                    Contact Us
-                  </p>
-                  <gov-row gap="15px" align="center" justify="start">
-                    <gov-tooltip
-                      text="e-support@gov.bw"
-                      position="bottom"
-                      color="light"
-                    >
-                      <gov-icon
-                        name="envelope"
-                        size="md"
-                        variant="white"
-                      ></gov-icon>
-                    </gov-tooltip>
-                    <gov-tooltip
-                      text="+26773996013"
-                      position="bottom"
-                      color="light"
-                    >
-                      <gov-icon
-                        name="phone"
-                        size="md"
-                        variant="white"
-                      ></gov-icon>
-                    </gov-tooltip>
-                  </gov-row>
+                      <gov-tooltip
+                        text="https://x.com/BWGovernment"
+                        position="bottom"
+                        color="light"
+                      >
+                        <gov-icon name="X" size="md" variant="white"></gov-icon>
+                      </gov-tooltip>
+                      <gov-tooltip
+                        text="https://www.instagram.com/bwgov/"
+                        position="bottom"
+
+                        color="light"
+                      >
+                        <gov-icon
+                          name="instagram"
+                          size="md"
+                          variant="white"
+                        ></gov-icon>
+                      </gov-tooltip>
+                    </gov-row>
+                  </gov-box>
                 </gov-box>
-                <div className="border bw-2 border-white border-radius-lg vertical-divider"></div>
-                <gov-box style={{ marginLeft: "12px" }} size="7" align="start">
-                  <p className="white-text smaller-caption mb-5 mt-0">Social</p>
-                  <gov-row gap="15px" align="center" justify="start">
-                    <gov-tooltip
-                      text="https://www.facebook.com/BotswanaGovernment/"
-                      position="bottom"
-                      color="light"
-                    >
-                      <gov-icon
-                        name="facebook"
-                        size="md"
-                        variant="white"
-                      ></gov-icon>
-                    </gov-tooltip>
-
-                    <gov-tooltip
-                      text="https://x.com/BWGovernment"
-                      position="bottom"
-                      color="light"
-                    >
-                      <gov-icon name="X" size="md" variant="white"></gov-icon>
-                    </gov-tooltip>
-                    <gov-tooltip
-                      text="https://www.instagram.com/bwgov/"
-                      position="bottom"
-                      color="light"
-                    >
-                      <gov-icon
-                        name="instagram"
-                        size="md"
-                        variant="white"
-                      ></gov-icon>
-                    </gov-tooltip>
-                  </gov-row>
-                </gov-box>
-              </gov-box>
-            </div>
-
-            {/* app version */}
-            <div className="white-text smaller-caption" style={{}}>
-              © 2025 1Gov1Citizen Portal v30.5
-            </div>
-          </gov-box>
-
+              </div>
+              {/* app version */}
+              <div className="white-text smaller-caption" style={{}}>
+                © 2025 1Gov1Citizen Portal v30.5
+              </div>
+            </gov-box>
           {/* Space inbetween */}
           <gov-box size="auto"></gov-box>
+            {/* Login and Registration Buttons */}
+            <gov-box
+              size="6"
+              align="end"
+              justify="end"
+              gap="15px"
+              is-flex-box="true"
+              classes=""
+            >
+              <gov-button
+                onClick={handleLoginClick}
+                type-variant="button"
+                size="xxl"
+                variant="white"
+                label="Login"
+                styles='{"padding":"20px 60px"}'
+              ></gov-button>
+              <gov-button
+                onClick={handleRegistrationClick}
+                type-variant="button"
+                size="xxl"
+                variant="black"
+                label="Register"
+                styles='{"padding":"20px 60px"}'
+              ></gov-button>
+            </gov-box>
 
-          {/* Login and Registration Buttons */}
-          <gov-box
-            size="3"
-            align="end"
-            justify="end"
-            gap="15px"
-            is-flex-box="true"
-            classes=""
-          >
-
-            <gov-button
-              onClick={handleLoginClick}
-              type-variant="button"
-              size="xxl"
-              variant="white"
-              label="Login"
-              styles='{"padding":"20px 60px"}'
-            ></gov-button>
-            <gov-button
-              onClick={handleRegistrationClick}
-              type-variant="button"
-              size="xxl"
-              variant="black"
-              label="Register"
-              styles='{"padding":"20px 60px"}'
-            ></gov-button>
-          </gov-box>
-        </gov-row>
-
-        {/* model for login */}
+          </div>
+        </div>
+        {/* model for loging */}
         <gov-popups 
-        button-styles='{"padding":"20px 60px"}'
-        ref={loginDialogRef} id="LoginDialog" styles='{"width":"570px","border-radius":"15px"}' header="Login" subheader="Complete the form below to access your account." confirm-button-text="Login"  confirm-button-variant="success" show-cancel-button="false" show-confirm-button="true" backdrop-close="true" disable-close="false">
+        button-styles='{"padding":"20px 60px"}'        
+        ref={loginDialogRef} id="LoginDialog" styles='{"width":"570px","border-radius":"15px"}' header="Login" subheader="Complete the form below to access your account." cancel-button-text="Cancel" confirm-button-text="Login" show-cancel-button="false" show-confirm-button="true" confirm-button-variant="success" backdrop-close="false" disable-close="false">
           <div style={{ padding: "0px 20px", border: "none" }}>
             <hr style={{ borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px" }}></hr>
             <span className="h6" style={{ fontWeight: "700" }}>Choose Login Options</span>
@@ -342,8 +337,7 @@ export default function Home() {
                       Recover account
                     </p>
                   </gov-row>
-
-                 
+                
                 </div>
               </div>
               <div slot="Phone">
