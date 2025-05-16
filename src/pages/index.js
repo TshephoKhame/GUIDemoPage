@@ -3,59 +3,59 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 
-export function LoginButton(){
+export function LoginButton() {
   const router = useRouter();
 
-  function loginToDashboard()  {
+  function loginToDashboard() {
     console.log("login");
     router.push("/dashboard");
   };
 
-  return(
+  return (
     <gov-row
-    align="center"
-    justify="center"
-    className="mt-20 mb-8"
-  >
-    <div onClick={loginToDashboard}>
-    <gov-button
-      type-variant="button"
-      size="md"
-      variant="success"
-      label="login"
-      styles='{"padding":"20px 60px"}'
-    ></gov-button>
-    </div>
-  </gov-row>
+      align="center"
+      justify="center"
+      className="mt-20 mb-8"
+    >
+      <div onClick={loginToDashboard}>
+        <gov-button
+          type-variant="button"
+          size="md"
+          variant="success"
+          label="login"
+          styles='{"padding":"20px 60px"}'
+        ></gov-button>
+      </div>
+    </gov-row>
   );
-} 
+}
 
-export function RegisterButton(){
+export function RegisterButton() {
   const router = useRouter();
 
-  function registerToDashboard()  {
+  function registerToDashboard() {
     console.log("login");
     router.push("/dashboard");
   };
 
-  return(
+  return (
     <gov-row
-    align="center"
-    justify="center"
-    className="mt-20 mb-8"
-  >
-    <div onClick={registerToDashboard}>
-    <gov-button
-      type-variant="button"
-      size="md"
-      variant="success"
-      label="login"
-      styles='{"padding":"20px 60px"}'
-    ></gov-button>
-    </div>
-  </gov-row>
+      align="center"
+      justify="center"
+      className="mt-20 mb-8"
+    >
+      <div onClick={registerToDashboard}>
+        <gov-button
+          type-variant="button"
+          size="md"
+          variant="success"
+          label="login"
+          styles='{"padding":"20px 60px"}'
+        ></gov-button>
+      </div>
+    </gov-row>
   );
-} 
+}
 
 export default function Home() {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
@@ -76,6 +76,13 @@ export default function Home() {
       registrationDialogRef.current.openModal();
     }
   };
+
+  function gotToDashboard() {
+    // alert('SSSSS SSSS SS');
+    window.location.href = '/dashboard';
+    // router.push("/dashboard");
+  }
+
   return (
     <div
 
@@ -97,14 +104,14 @@ export default function Home() {
         <div style={{ height: "60vh" }}>
           {/*coat of arms row */}
           <gov-row
-          
+
             align="start"
             justify="center"
             gap="10px"
             reverse="false"
             classes=""
-           
-            
+
+
           >
             {/*renders coat of arms image */}
             <gov-tooltip
@@ -124,8 +131,8 @@ export default function Home() {
             justify="center"
             gap="10px"
             reverse="false"
-            
-             classes="header-row"
+
+            classes="header-row"
           >
             <p className="header-max white-text"> Welcome to 1Gov e-Services Portal</p>
           </gov-row>
@@ -140,14 +147,7 @@ export default function Home() {
         </div>
 
         {/* footer */}
-        <gov-row
-          align="between"
-          justify="start"
-          gap="10px"
-          reverse="false"
-          classes=""
-          style={{ height: "40vh", padding: "40px" }}
-        >
+        <gov-row align="bottom" styles='{"padding":"20px"}' >
           {/* left side of footer */}
           <gov-box
             size="6"
@@ -202,7 +202,7 @@ export default function Home() {
                     <gov-tooltip
                       text="https://www.facebook.com/BotswanaGovernment/"
                       position="bottom"
-                     color="light"
+                      color="light"
                     >
                       <gov-icon
                         name="facebook"
@@ -221,8 +221,8 @@ export default function Home() {
                     <gov-tooltip
                       text="https://www.instagram.com/bwgov/"
                       position="bottom"
-                   
-                       color="light"
+
+                      color="light"
                     >
                       <gov-icon
                         name="instagram"
@@ -241,19 +241,17 @@ export default function Home() {
             </div>
           </gov-box>
 
-          {/* Space inbetween */}
-          <gov-box size="auto"></gov-box>
+
 
           {/* Login and Registration Buttons */}
           <gov-box
-            size="3"
+            size="6"
             align="end"
             justify="end"
             gap="15px"
             is-flex-box="true"
             classes=""
           >
-
             <gov-button
               onClick={handleLoginClick}
               type-variant="button"
@@ -271,6 +269,7 @@ export default function Home() {
               styles='{"padding":"20px 60px"}'
             ></gov-button>
           </gov-box>
+
         </gov-row>
 
         {/* model for loging */}
@@ -326,11 +325,14 @@ export default function Home() {
                       Recover account
                     </p>
                   </gov-row>
-
-                  <LoginButton />
+                  <gov-row align="end" justify="end">
+              <gov-button type="submit" size="sm" variant="success" label="Login" onClick={gotToDashboard} styles='{ "padding": "15px", "borderRadius": "10px", "width": "100%" }' />
+            </gov-row>
                 </div>
               </div>
               <div slot="Phone">
+
+                <hr style={{ borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px" }}></hr>
                 <div style={{ padding: "10px 30px 80px" }}>
                   <gov-input
                     label="Phone Number"
@@ -368,12 +370,17 @@ export default function Home() {
                     </p>
                   </gov-row>
 
-                  <LoginButton />
+                  <gov-row align="end" justify="end">
+                    <gov-button type="submit" size="sm" variant="success" label="Login" onClick={gotToDashboard} styles='{ "padding": "15px", "borderRadius": "10px", "width": "100%" }' />
+
+                  </gov-row>
                 </div>
-                
+
               </div>
               <div slot="Email">
-                <div style={{ padding: "10px 30px 80px"  }}>
+
+                <hr style={{ borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px" }}></hr>
+                <div style={{ padding: "10px 30px 80px" }}>
                   <gov-input
                     label="Email"
                     type="email"
@@ -410,16 +417,22 @@ export default function Home() {
                     </p>
                   </gov-row>
 
-                  <LoginButton/>
+                  <gov-row align="end" justify="end">
+                    <gov-button type="submit" size="sm" variant="success" label="Login" onClick={gotToDashboard} styles='{ "padding": "15px", "borderRadius": "10px", "width": "100%" }' />
+
+                  </gov-row>
                 </div>
               </div>
             </gov-tabs>
+            
           </div>
         </gov-popups>
 
         {/* popup for registration */}
         <gov-popups ref={registrationDialogRef} id="RegistrationDialog" styles='{"width":"600px","border-radius":"15px"}' header="Register" subheader="Complete the form below to create your 1Gov account." cancel-button-text="Cancel" confirm-button-text="Confirm" show-cancel-button="false" show-confirm-button="false" backdrop-close="true" disable-close="false">
           <div style={{ padding: "0px 20px" }}>
+            <hr style={{ borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px" }}></hr>
+            <span className="h6" style={{ fontWeight: "700" }}>Choose Registration Options</span>
             <gov-tabs
               tab-list='["Citizen","Non-citizen"]'
               active-tab="Citizen"
@@ -430,6 +443,8 @@ export default function Home() {
               inactive-button-styles='{"color":"gray","border":"none","height":"35px"}'
             >
               <div slot="Citizen">
+
+                <hr style={{ borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px" }}></hr>
                 <gov-form
                   header=""
                   url=""
@@ -505,6 +520,8 @@ export default function Home() {
                 </gov-form>
               </div>
               <div slot="Non-citizen">
+
+                <hr style={{ borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px" }}></hr>
                 <gov-form
                   header=""
                   url=""
@@ -513,6 +530,7 @@ export default function Home() {
                   submit-btn-text="Register"
                   hide-cancel-btn="true"
                   variant="success"
+                  styles='{"border":"none","box-shadow": "none"}'
                 >
                   <gov-input
                     label="Passport Number"
