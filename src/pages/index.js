@@ -61,9 +61,26 @@ export default function Home() {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const loginDialogRef = useRef(null);
   const registrationDialogRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
-  }, []);
+
+// Add event listener for the login button after component mounts
+    const handleLogin = () => {
+      console.log("Login button clicked");
+      router.push("/dashboard");
+    };
+    
+    // Add global event listener to catch button click
+    document.addEventListener('confirmClicked', function(e) {
+      handleLogin();
+    });
+    
+    // Clean up event listener
+    return () => {
+      document.removeEventListener('click', handleLogin);
+    };
+  }, [router]);
 
   const handleLoginClick = () => {
     if (loginDialogRef.current) {
@@ -76,6 +93,8 @@ export default function Home() {
       registrationDialogRef.current.openModal();
     }
   };
+
+
   return (
     <div
 
@@ -268,8 +287,10 @@ export default function Home() {
           </gov-box>
         </gov-row>
 
-        {/* model for loging */}
-        <gov-popups ref={loginDialogRef} id="LoginDialog" styles='{"width":"570px","border-radius":"15px"}' header="Login" subheader="Complete the form below to access your account." cancel-button-text="Cancel" confirm-button-text="Confirm" show-cancel-button="false" show-confirm-button="false" backdrop-close="true" disable-close="false">
+        {/* model for login */}
+        <gov-popups 
+        button-styles='{"padding":"20px 60px"}'
+        ref={loginDialogRef} id="LoginDialog" styles='{"width":"570px","border-radius":"15px"}' header="Login" subheader="Complete the form below to access your account." confirm-button-text="Login"  confirm-button-variant="success" show-cancel-button="false" show-confirm-button="true" backdrop-close="true" disable-close="false">
           <div style={{ padding: "0px 20px", border: "none" }}>
             <hr style={{ borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px" }}></hr>
             <span className="h6" style={{ fontWeight: "700" }}>Choose Login Options</span>
@@ -285,7 +306,7 @@ export default function Home() {
               <div slot="1GovID">
                 <hr style={{ borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px" }}></hr>
 
-                <div style={{ padding: "10px 30px 80px" }}>
+                <div style={{ padding: "10px 30px 5px" }}>
                   <gov-input
                     label="1Gov ID"
                     type="text"
@@ -322,11 +343,11 @@ export default function Home() {
                     </p>
                   </gov-row>
 
-                  <LoginButton />
+                 
                 </div>
               </div>
               <div slot="Phone">
-                <div style={{ padding: "10px 30px 80px" }}>
+                <div style={{ padding: "10px 30px 5px" }}>
                   <gov-input
                     label="Phone Number"
                     type="tel"
@@ -362,12 +383,10 @@ export default function Home() {
                       Recover account
                     </p>
                   </gov-row>
-
-                  <LoginButton />
                 </div>
               </div>
               <div slot="Email">
-                <div style={{ padding: "10px 30px 80px"  }}>
+                <div style={{ padding: "10px 30px 5px"  }}>
                   <gov-input
                     label="Email"
                     type="email"
@@ -404,7 +423,6 @@ export default function Home() {
                     </p>
                   </gov-row>
 
-                  <LoginButton/>
                 </div>
               </div>
             </gov-tabs>

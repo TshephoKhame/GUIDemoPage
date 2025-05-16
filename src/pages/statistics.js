@@ -65,7 +65,7 @@ export default function InventoryDashboard() {
             <div className="d-flex flex-wrap mt-20" style={{ gap: "20px" }}>
               {/* Stock Distribution */}
               <div style={{ width: "100%" }}>
-                <div className='border bw-1 border-radius-lg shadow w-100' style={{ padding: "1rem" }}>
+                <div className='border bw-1 border-radius-lg shadow w-100' style={{ padding: "1rem", overflowY: "auto" }}>
                   <h3 style={{ fontSize: "1.25rem", fontWeight: "600", color: "#374151", marginBottom: "0.5rem" }}>Stock Distribution</h3>
                   <p style={{ fontSize: "0.875rem", color: "#6b7280", marginBottom: "1rem" }}>Breakdown by category</p>
                   <div className="d-flex flex-wrap" style={{ gap: "20px", justifyContent: "space-around" }}>
