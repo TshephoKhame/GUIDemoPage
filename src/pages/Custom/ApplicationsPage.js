@@ -113,12 +113,13 @@ export default function ApplicationsPage () {
         <div className="h2 black-text mb-30" style={{}}>
           Total: {serviceData.length}
         </div>
-
+        <div style={{ overflowX: "scroll",overflowY: "hidden" }}> 
         {/* Title */}
         <gov-box
           is-flex-box="true"
           justify="spacebetween"
           style={{
+            minWidth: "780px",
             justifyContent: "space-between",
             alignItems: "center",
             borderRadius: "4px",
@@ -141,7 +142,7 @@ export default function ApplicationsPage () {
               style={{
                 marginBottom: "5px",
                 minWidth: "200px",
-
+                fontWeight: "600",
               }}
             >
               Submission Id
@@ -151,6 +152,7 @@ export default function ApplicationsPage () {
                 width: "200px",
                 textAlign: "left",
                 minWidth: "200px",
+                fontWeight: "600",
 
               }}
             >
@@ -163,14 +165,20 @@ export default function ApplicationsPage () {
             size={5}
             justify="spaceevenly"
             style={{
+            
               marginRight: "10px",
-              justifyContent: "space-between",
+                justifyContent: "space-between",
+                minWidth: "200px",
+                paddingLeft: "10px",
+                textAlign: "left",
             }}
           >
             <div
               style={{
                 marginBottom: "5px",
                 minWidth: "200px",
+                fontWeight: "600",
+
               }}
             >
               Submitted
@@ -180,6 +188,7 @@ export default function ApplicationsPage () {
                 width: "200px",
                 textAlign: "left",
                 minWidth: "200px",
+                fontWeight: "600",
 
               }}
             >
@@ -187,7 +196,7 @@ export default function ApplicationsPage () {
             </div>
           </gov-box>
         </gov-box>
-
+              
         {/* Map of service Data info */}
         {serviceData.map((service, index) => (
           <gov-box
@@ -267,12 +276,12 @@ export default function ApplicationsPage () {
               </div>
               <div style={{ width: "200px",  minWidth: "200px", textAlign: "left" }}>
                 <div
-                  className="secondary-bg info-text h6 w-40 "
+                  className=" secondary-bg info-text h6 "
                   style={{
-                    padding: "5px 15px",
-                    borderRadius: "12px",
-                    textAlign: "center",
-                    
+                    "padding": "5px 15px",
+                    "borderRadius": "12px",
+                    "textAlign": "center",
+                    "width": "110px"
                   }}
                 >
                   {service.status}
@@ -281,10 +290,11 @@ export default function ApplicationsPage () {
             </gov-box>
           </gov-box>
         ))}
+        </div>
       </div>
     </div>
     <div slot="Drafts">
-      <div style={{ padding: "35px 20px" }}>
+      <div style={{ padding: "35px 20px",overflow: "scroll" }}>
         <div className="h2 black-text mb-30" style={{}}>
           Total: {serviceData.length}
         </div>

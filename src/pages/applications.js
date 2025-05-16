@@ -15,7 +15,7 @@ export default function Applications() {
       <gov-row style={{ paddingTop: "15px" }}>
         <gov-breadcrumb variant="no-background"></gov-breadcrumb>
       </gov-row>
-      <div style={{ padding: "0px 5vw" }}>
+      <div style={{ padding: "0px 0px 0px 20px" }}>
         {/* <SubmissionsPage/> */}
       <SubmissionsPage></SubmissionsPage>
       </div>
