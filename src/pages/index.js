@@ -285,7 +285,7 @@ export default function Home() {
         {/* model for loging */}
         <gov-popups 
         button-styles='{"padding":"20px 60px"}'        
-        ref={loginDialogRef} id="LoginDialog" styles='{"width":"570px","border-radius":"15px"}' header="Login" subheader="Complete the form below to access your account." cancel-button-text="Cancel" confirm-button-text="Login" show-cancel-button="false" show-confirm-button="true" confirm-button-variant="success" backdrop-close="false" disable-close="false">
+        ref={loginDialogRef} id="LoginDialog" styles='{"width":"570px","border-radius":"15px"}' header="Login" subheader="Complete the form below to access your account." cancel-button-text="Clear" confirm-button-text="Login" show-cancel-button="true" show-confirm-button="true" confirm-button-variant="success" backdrop-close="false" disable-close="false">
           <div style={{ padding: "0px 20px", border: "none" }}>
             <hr style={{ borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px" }}></hr>
             <span className="h6" style={{ fontWeight: "700" }}>Choose Login Options</span>
@@ -341,6 +341,7 @@ export default function Home() {
                 </div>
               </div>
               <div slot="Phone">
+                <hr style={{ borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px" }}></hr>
                 <div style={{ padding: "10px 30px 5px" }}>
                   <gov-input
                     label="Phone Number"
@@ -380,6 +381,7 @@ export default function Home() {
                 </div>
               </div>
               <div slot="Email">
+                <hr style={{ borderTop: "1px solid rgb(217 217 217)", borderRadius: "5px" }}></hr>
                 <div style={{ padding: "10px 30px 5px"  }}>
                   <gov-input
                     label="Email"
