@@ -2,7 +2,6 @@ import React from 'react';
 import { useState, useEffect, useRef } from "react";
 
 export default function ServiceCatagories() {
-  const popup = useRef(null); 
 
   const serviceCategories = [
     {
@@ -55,12 +54,6 @@ export default function ServiceCatagories() {
   useEffect(() => {
   }, []);  // Added empty dependency array to prevent infinite loop
 
-  const openPopup = () => {
-    console.log("Open Popup clicked");
-    if (popup.current) {
-      popup.current.openModal();
-    }
-  };
 
   return (
     <gov-box>
@@ -131,7 +124,7 @@ export default function ServiceCatagories() {
           {serviceCategories.map((service, index) => (
             <div
               // onclick={openModal}
-              onClick={openPopup}
+              onClick={() => openPopup()}
               onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
               onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
               show-button='false'
@@ -178,33 +171,7 @@ export default function ServiceCatagories() {
         </gov-row>
       </div>
 
-      {/* Popup */}
-      <gov-popups  ref={popup} id="modal1"  header="" subheader="" cancel-button-text="Cancel" confirm-button-text="Accept Conditions & Apply" show-cancel-button="true" show-confirm-button="true" backdrop-close="true" disable-close="false">
-        <div style={{ padding: "0px 20px", border: "none" }}>
-        <h3 style={{ textAlign: "center" }}>General Conditions</h3>
-  <ul>
-    <li>This service is only applicable to citizens of Botswana aged 18 years and above.</li>
-    <li>The service is free of charge.</li>
-    <li>Clients will undergo an assessment conducted by a Social Welfare Officer or Community Development Officer.</li>
-    <li>This process will take 4 weeks before the client is given feedback.</li>
-    <li>
-      To be enrolled, applicants must meet the eligibility criteria specified in the 
-      <strong>Revised Destitute Policy of 2002</strong>, as provided by the Ministry of Local Government and Rural Development.
-    </li>
-  </ul>
-
-  <h4>Eligibility Criteria:</h4>
-  <p>To be considered for this service, the applicant must:</p>
-  <ul>
-    <li>
-      Be incapacitated by <strong>disabilities or chronic health conditions</strong>, unable to engage in sustainable economic activities, and have insufficient assets and income sources.
-    </li>
-    <li>Be earning or receiving an income of <strong>P300 per month or less</strong>.</li>
-    <li>Possess no more than <strong>six (6) livestock units</strong>.</li>
     
-  </ul>
-        </div>    
-      </gov-popups>
 
     </gov-box>
   );
