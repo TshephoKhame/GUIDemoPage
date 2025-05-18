@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef  } from "react";
+import { useRouter } from "next/navigation";
 
 export default function MainLayout({ children, showLoginToaster = false,toasterHeader="",toasterText="",toasterVarient ="",toasterAnimation=""}) {
   const [showToaster, setShowToaster] = useState(showLoginToaster);
   const alert = useRef(null);
- 
+  const router = useRouter();
+
   
    useEffect(() => {
       const openAlert = alert.current;
@@ -24,6 +26,11 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
       window.userFunction = function() {
         console.log('user button clicked!');
         window.alert('user clicked!');
+      };
+
+      window.logout = function() {
+        console.log('logout');
+        router.push("/");
       };
     }, []);
   return (
@@ -72,7 +79,8 @@ export default function MainLayout({ children, showLoginToaster = false,toasterH
         icon-Buttons='[
             {"icon": "bell", "size": "24px", "variant": "primary", "action": "bellFunction"},
             {"icon": "infoCircle", "size": "24px", "variant": "primary", "action": "infoFunction"},
-            {"icon": "user", "size": "24px", "variant": "primary", "action": "userFunction"}
+            {"icon": "user", "size": "24px", "variant": "primary", "action": "userFunction"},
+            {"icon": "arrowLeftToBracketOutline", "size": "24px", "variant": "danger", "action": "logout"}
           ]'
       >
         <div style={{}}>
