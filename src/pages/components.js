@@ -47,8 +47,7 @@ export default function Components() {
               submit-text="Submit"
               reset-on-submit="true"
               max-steps-visible="5"
-              styles='{ "borderRadius": "25px" }'
-              button-styles='{ "borderRadius": "30px", "width": "100px"}'
+              button-styles='{"padding":"20px 60px"}' 
             >
               <div slot="step-0">
                 <div className="">
@@ -74,16 +73,27 @@ export default function Components() {
                 <div className="">
                   {/* Dropdown */}
                   <gov-row className="mb-15 p-4">
-                    <gov-col size="12" className="mb-4">
+                    <div style={{ width: "100%", display: "flex", flexFlow: "wrap", flexDirection: "row", gap: "20px",  }}>
                       <gov-drop
-                        heading="File Type"
+                        heading="Simple Dropdown"
                         subtitle="Select an option from below"
                         animation-delay=""
                         animation=""
                         animation-speed=""
                         options='["Option 1","Option 2","Option 3","Option 4"]'
                       ></gov-drop>
-                    </gov-col>
+
+                      <gov-combo-box
+                        label="Searchable Dropdown"
+                        description="Choose or search from the available options below"
+                        animation-delay=""
+                        animation=""
+                        animation-speed=""
+                        options='["List entry #1","List entry #2","List entry #3","List entry #4","List entry #5"]'>
+                      </gov-combo-box>
+
+
+                    </div>
                   </gov-row>
                 </div>
               </div>
