@@ -100,6 +100,7 @@ export default function Home() {
     <div
 
       style={{
+        overflow: "hidden",
         height: "100vh",
         background:
           " linear-gradient(0deg ,var(--kcAlternativeBlue),var(--kcBotswanaBlue))",
@@ -127,7 +128,7 @@ export default function Home() {
             <gov-tooltip
               text="Go to https://www.gov.bw"
               position="bottom"
-              color="light"
+              color="black"
             >
               <div
                 className="coat-of-arms-container"
@@ -157,9 +158,9 @@ export default function Home() {
         <div style={{ padding: "50px" ,alignContent: "end"  }}>
           {/* footer */}
           <div align="bottom" style={{ display: 'flex',
-    flexFlow: 'nowrap',
-    gap: '0px',
-    justifyContent: 'start'}}>
+            flexFlow: 'nowrap',
+            gap: '0px',
+            justifyContent: 'start'}}>
             {/* left side of footer */}
             <gov-box
               size="6"
@@ -214,7 +215,7 @@ export default function Home() {
                       <gov-tooltip
                         text="https://www.facebook.com/BotswanaGovernment/"
                         position="bottom"
-                        color="light"
+                        color="black"
                       >
                         <gov-icon
                           name="facebook"
@@ -226,7 +227,7 @@ export default function Home() {
                       <gov-tooltip
                         text="https://x.com/BWGovernment"
                         position="bottom"
-                        color="light"
+                        color="black"
                       >
                         <gov-icon name="X" size="md" variant="white"></gov-icon>
                       </gov-tooltip>
@@ -234,7 +235,7 @@ export default function Home() {
                         text="https://www.instagram.com/bwgov/"
                         position="bottom"
 
-                        color="light"
+                        color="black"
                       >
                         <gov-icon
                           name="instagram"
