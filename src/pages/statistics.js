@@ -12,7 +12,7 @@ export default function InventoryDashboard() {
       toasterVarient="info"
       toasterAnimation="fadeIn"
     >
-      <div style={{ padding: "2rem", backgroundColor: "#f9fafb" }}>
+      <div style={{ padding: "2rem" }}>
         {/* Header */}
         <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", marginBottom: "2rem" }}>
           <div>
